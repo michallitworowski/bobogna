@@ -929,4 +929,899 @@
     });
   </script>
 </body>
+</html>      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    /* ─── NAV ─── */
+    #nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 500;
+      padding: 28px 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background 0.45s ease, padding 0.45s ease, box-shadow 0.45s ease;
+    }
+    #nav.scrolled {
+      background: rgba(250,248,244,0.95);
+      backdrop-filter: blur(14px);
+      padding: 18px 64px;
+      box-shadow: 0 1px 0 rgba(44,44,44,0.07);
+    }
+    .nav-logo img { height: 26px; }
+    .nav-links {
+      display: flex; gap: 44px; list-style: none;
+    }
+    .nav-links a {
+      font-size: 13px; font-weight: 400;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--charcoal); text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-right {
+      display: flex; align-items: center; gap: 20px;
+    }
+    .nav-cta {
+      font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--navy); border: 1px solid var(--navy);
+      padding: 10px 26px; text-decoration: none;
+      transition: background 0.22s ease, color 0.22s ease;
+    }
+    .nav-cta:hover { background: var(--navy); color: var(--cream); }
+
+    /* Language toggle */
+    .lang-toggle {
+      display: flex; align-items: center; gap: 4px;
+    }
+    .lang-btn {
+      font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase;
+      color: #aaa; background: none; border: none; cursor: pointer;
+      padding: 2px 4px;
+      transition: color 0.2s ease;
+      font-family: 'Jost', sans-serif;
+    }
+    .lang-btn.active { color: var(--gold); }
+    .lang-btn:hover { color: var(--charcoal); }
+    .lang-sep { font-size: 9px; color: #ccc; }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 55% 45%;
+      background: var(--cream);
+      overflow: hidden;
+    }
+    .hero-left {
+      display: flex; flex-direction: column;
+      justify-content: center;
+      padding: 160px 64px 100px 80px;
+      position: relative;
+    }
+    .hero-eyebrow {
+      font-size: 10px; font-weight: 400;
+      letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 36px;
+    }
+    .hero-headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(4.2rem, 6.5vw, 8rem);
+      font-weight: 300;
+      line-height: 0.88;
+      letter-spacing: -0.025em;
+      color: var(--navy);
+      margin-bottom: 44px;
+    }
+    .hero-headline em {
+      font-style: italic; color: var(--charcoal);
+    }
+    .hero-sub {
+      font-size: 14px; font-weight: 300; line-height: 1.85;
+      color: #6a6358; max-width: 380px;
+      margin-bottom: 60px; letter-spacing: 0.01em;
+    }
+    .hero-actions {
+      display: flex; align-items: center; gap: 36px;
+    }
+    .btn-primary {
+      font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--warm-white); background: var(--navy);
+      padding: 16px 42px; text-decoration: none;
+      transition: background 0.25s ease, transform 0.2s ease;
+    }
+    .btn-primary:hover { background: var(--navy-light); transform: translateY(-1px); }
+    .btn-primary:active { transform: translateY(0); }
+    .btn-ghost {
+      font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--charcoal); text-decoration: none;
+      display: flex; align-items: center; gap: 10px;
+      transition: color 0.2s ease;
+    }
+    .btn-ghost span { transition: transform 0.22s ease; }
+    .btn-ghost:hover { color: var(--gold); }
+    .btn-ghost:hover span { transform: translateX(5px); }
+    .hero-scroll {
+      position: absolute; bottom: 44px; left: 80px;
+      display: flex; align-items: center; gap: 18px;
+    }
+    .hero-scroll-line {
+      width: 44px; height: 1px; background: var(--gold);
+    }
+    .hero-scroll p {
+      font-size: 9px; letter-spacing: 0.25em;
+      text-transform: uppercase; color: #aaa;
+    }
+    .hero-right {
+      position: relative; overflow: hidden;
+    }
+    .hero-right img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center;
+      transform: scale(1.06);
+      transition: transform 9s ease;
+    }
+    .hero-right:hover img { transform: scale(1.0); }
+    .hero-right::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(145deg, rgba(28,43,74,0.18) 0%, transparent 55%);
+    }
+
+    /* ─── MARQUEE ─── */
+    .marquee-wrap {
+      background: var(--navy);
+      padding: 18px 0; overflow: hidden;
+    }
+    .marquee-track {
+      display: flex; white-space: nowrap;
+      animation: marqueeScroll 24s linear infinite;
+    }
+    .marquee-item {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 13px; font-weight: 300;
+      letter-spacing: 0.28em; text-transform: uppercase;
+      color: rgba(245,240,232,0.65); padding: 0 52px;
+    }
+    .marquee-sep {
+      color: var(--gold); opacity: 1;
+      padding: 0 4px;
+    }
+    @keyframes marqueeScroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* ─── SECTION BASICS ─── */
+    .section-label {
+      font-size: 9px; font-weight: 400;
+      letter-spacing: 0.32em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 18px;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 4vw, 5rem);
+      font-weight: 300; line-height: 0.95;
+      letter-spacing: -0.025em;
+      color: var(--navy);
+    }
+    .section-title em { font-style: italic; }
+    .gold-rule {
+      width: 36px; height: 1px;
+      background: var(--gold); margin: 28px 0;
+    }
+
+    /* ─── PRODUCTS ─── */
+    .products {
+      background: var(--warm-white);
+      padding: 128px 80px;
+    }
+    .products-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 72px;
+    }
+    .products-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr 1fr;
+      grid-template-rows: 380px 380px;
+      gap: 3px;
+    }
+    .pcard {
+      position: relative; overflow: hidden;
+      background: var(--dust); cursor: pointer;
+    }
+    .pcard:first-child { grid-row: span 2; }
+    .pcard-img {
+      overflow: hidden; position: relative;
+      width: 100%; height: 100%;
+    }
+    .pcard-img img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+      transition: transform 0.65s cubic-bezier(0.25,0.46,0.45,0.94);
+    }
+    .pcard:hover .pcard-img img { transform: scale(1.07); }
+    .pcard-info {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      padding: 28px;
+      background: linear-gradient(to top, rgba(28,43,74,0.88) 0%, transparent 100%);
+      color: white;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+    .pcard:hover .pcard-info { opacity: 1; transform: translateY(0); }
+    .pcard-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.7rem; font-weight: 400;
+      margin-bottom: 5px;
+    }
+    .pcard-sub {
+      font-size: 10px; letter-spacing: 0.15em;
+      text-transform: uppercase; opacity: 0.7;
+    }
+
+    /* ─── STORY ─── */
+    .story {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 700px;
+      background: var(--cream);
+    }
+    .story-visual { position: relative; overflow: hidden; min-height: 700px; }
+    .story-visual img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center top; display: block;
+    }
+    .story-visual::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(to right, rgba(28,43,74,0.1) 0%, transparent 40%);
+    }
+    .story-body {
+      padding: 100px 80px;
+      display: flex; flex-direction: column;
+      justify-content: center;
+    }
+    .story-text {
+      font-size: 15px; font-weight: 300;
+      line-height: 1.95; color: #6a6358;
+      max-width: 440px; margin-bottom: 20px;
+    }
+
+    /* ─── LIFESTYLE ─── */
+    .lifestyle {
+      background: var(--navy);
+      padding: 120px 80px;
+      color: var(--cream);
+    }
+    .lifestyle-header {
+      display: flex; align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 64px;
+    }
+    .lifestyle-header .section-label { color: rgba(184,146,42,0.75); }
+    .lifestyle-header .section-title { color: var(--cream); }
+    .lifestyle-desc {
+      font-size: 13px; font-weight: 300;
+      color: rgba(245,240,232,0.45);
+      max-width: 260px; line-height: 1.8;
+      text-align: right;
+    }
+    .lifestyle-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1fr;
+      grid-template-rows: 340px 340px;
+      gap: 14px;
+    }
+    .lcard {
+      position: relative; overflow: hidden;
+    }
+    .lcard:first-child { grid-row: span 2; }
+    .lcard img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center top;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+    .lcard:hover img { transform: scale(1.04); }
+    .lcard-caption {
+      position: absolute; bottom: 18px; left: 20px;
+      font-size: 9px; letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.65);
+    }
+
+    /* ─── QUOTE ─── */
+    .quote-section {
+      background: var(--warm-white);
+      padding: 128px 80px;
+      text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .quote-bg {
+      position: absolute; top: -80px;
+      left: 50%; transform: translateX(-50%);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32vw; line-height: 1;
+      color: rgba(184,146,42,0.045);
+      pointer-events: none;
+      user-select: none;
+    }
+    .quote-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3.2vw, 3.8rem);
+      font-weight: 300; font-style: italic;
+      line-height: 1.3; color: var(--navy);
+      max-width: 860px;
+      margin: 0 auto 36px;
+      position: relative; z-index: 1;
+    }
+    .quote-attr {
+      font-size: 10px; letter-spacing: 0.28em;
+      text-transform: uppercase; color: var(--gold);
+      position: relative; z-index: 1;
+    }
+
+    /* ─── CTA ─── */
+    .cta-band {
+      background: var(--navy);
+      padding: 100px 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+    .cta-band .section-label { color: rgba(184,146,42,0.75); }
+    .cta-band .section-title { color: var(--cream); margin-top: 12px; }
+    .cta-btns { display: flex; flex-direction: column; gap: 14px; flex-shrink: 0; }
+    .btn-gold {
+      font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--navy); background: var(--gold);
+      padding: 18px 52px; text-decoration: none;
+      text-align: center;
+      transition: background 0.22s ease, transform 0.2s ease;
+    }
+    .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); }
+    .btn-outline-cream {
+      font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+      color: rgba(245,240,232,0.75);
+      border: 1px solid rgba(245,240,232,0.3);
+      padding: 18px 52px; text-decoration: none;
+      text-align: center;
+      transition: border-color 0.22s ease, color 0.22s ease, background 0.22s ease;
+    }
+    .btn-outline-cream:hover {
+      border-color: rgba(245,240,232,0.8);
+      color: var(--cream);
+      background: rgba(245,240,232,0.07);
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #222220;
+      padding: 64px 80px 40px;
+    }
+    .footer-top {
+      display: flex; align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 60px; padding-bottom: 52px;
+      border-bottom: 1px solid rgba(245,240,232,0.08);
+    }
+    .footer-brand img { height: 22px; filter: invert(1) brightness(0.75); }
+    .footer-brand p {
+      font-size: 11px; font-weight: 300;
+      color: rgba(245,240,232,0.28);
+      margin-top: 18px; line-height: 1.8;
+      letter-spacing: 0.05em; max-width: 190px;
+    }
+    .footer-cols { display: flex; gap: 80px; }
+    .footer-col h4 {
+      font-size: 9px; letter-spacing: 0.24em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 22px;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 11px; }
+    .footer-col a {
+      font-size: 13px; font-weight: 300;
+      color: rgba(245,240,232,0.38); text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .footer-col a:hover { color: rgba(245,240,232,0.85); }
+    .footer-bottom {
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .footer-copy {
+      font-size: 10px; letter-spacing: 0.1em;
+      color: rgba(245,240,232,0.2);
+    }
+    .footer-ig {
+      display: flex; align-items: center; gap: 12px;
+      font-size: 10px; letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(245,240,232,0.35); text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .footer-ig:hover { color: var(--gold); }
+    .ig-icon {
+      width: 30px; height: 30px;
+      border: 1px solid rgba(245,240,232,0.15);
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    /* ─── ANIMATIONS ─── */
+    .fade-up {
+      opacity: 0; transform: translateY(30px);
+      transition: opacity 0.75s ease, transform 0.75s ease;
+    }
+    .fade-up.vis { opacity: 1; transform: translateY(0); }
+    .d1 { transition-delay: 0.1s; }
+    .d2 { transition-delay: 0.2s; }
+    .d3 { transition-delay: 0.3s; }
+    .d4 { transition-delay: 0.42s; }
+    .d5 { transition-delay: 0.54s; }
+
+    .fade-in {
+      opacity: 0;
+      transition: opacity 0.9s ease;
+    }
+    .fade-in.vis { opacity: 1; }
+  </style>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <div class="nav-logo">
+      <img src="brand_assets/BOBOGNA_EDU_ART_black_a.png" alt="Bobogna Edu Art">
+    </div>
+    <ul class="nav-links">
+      <li><a href="#products" data-i18n="nav.collection">Kolekcja</a></li>
+      <li><a href="#story" data-i18n="nav.story">Historia</a></li>
+      <li><a href="#lifestyle" data-i18n="nav.inspirations">Inspiracje</a></li>
+      <li><a href="#contact" data-i18n="nav.contact">Kontakt</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-toggle">
+        <button class="lang-btn active" id="btn-pl" onclick="setLang('pl')">PL</button>
+        <span class="lang-sep">/</span>
+        <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+      </div>
+      <a href="#products" class="nav-cta" data-i18n="nav.shop">Sklep</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-eyebrow fade-up" data-i18n="hero.eyebrow">Etui Kreatywne &middot; Kolekcja 2025</div>
+      <h1 class="hero-headline fade-up d1" data-i18n-html="hero.headline">
+        Sztuka<br>
+        <em>którą nosisz</em><br>
+        każdego dnia
+      </h1>
+      <p class="hero-sub fade-up d2" data-i18n="hero.sub">
+        Ręcznie szyte etui na przybory artystyczne, inspirowane arcydziełami malarstwa światowego. Dla tych, którzy noszą twórczość blisko serca.
+      </p>
+      <div class="hero-actions fade-up d3">
+        <a href="#products" class="btn-primary" data-i18n="hero.cta">Odkryj kolekcję</a>
+        <a href="#story" class="btn-ghost" data-i18n-html="hero.secondary">Nasza historia <span>→</span></a>
+      </div>
+      <div class="hero-scroll fade-up d4">
+        <div class="hero-scroll-line"></div>
+        <p data-i18n="hero.scroll">Przewiń w dół</p>
+      </div>
+    </div>
+    <div class="hero-right fade-in">
+      <img src="brand_assets/main_bobogna.jpg" alt="Bobogna — etui artystyczne">
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <span class="marquee-item">Etui Kreatywne</span>
+      <span class="marquee-item marquee-sep">·</span>
+      <span class="marquee-item">Bobogna Edu Art</span>
+      <span class="marquee-item marquee-sep">·</span>
+      <span class="marquee-item">Handcrafted with Love</span>
+      <span class="marquee-item marquee-sep">·</span>
+      <span class="marquee-item">Art Inspired Designs</span>
+      <span class="marquee-item marquee-sep">·</span>
+      <span class="marquee-item">Kraków &middot; Paris</span>
+      <span class="marquee-item marquee-sep">·</span>
+      <span class="marquee-item">Van Gogh &middot; Hokusai &middot; Vermeer</span>
+      <span class="marquee-item marquee-sep">·</span>
+      <!-- duplicate -->
+      <span class="marquee-item">Etui Kreatywne</span>
+      <span class="marquee-item marquee-sep">·</span>
+      <span class="marquee-item">Bobogna Edu Art</span>
+      <span class="marquee-item marquee-sep">·</span>
+      <span class="marquee-item">Handcrafted with Love</span>
+      <span class="marquee-item marquee-sep">·</span>
+      <span class="marquee-item">Art Inspired Designs</span>
+      <span class="marquee-item marquee-sep">·</span>
+      <span class="marquee-item">Kraków &middot; Paris</span>
+      <span class="marquee-item marquee-sep">·</span>
+      <span class="marquee-item">Van Gogh &middot; Hokusai &middot; Vermeer</span>
+      <span class="marquee-item marquee-sep">·</span>
+    </div>
+  </div>
+
+  <!-- PRODUCTS -->
+  <section id="products" class="products">
+    <div class="products-header">
+      <div>
+        <div class="section-label fade-up" data-i18n="products.label">001 / Kolekcja</div>
+        <h2 class="section-title fade-up d1" data-i18n-html="products.title">Nasze<br><em>etui artystyczne</em></h2>
+      </div>
+      <a href="#" class="btn-ghost fade-up d1" data-i18n-html="products.viewAll">Zobacz wszystkie <span>→</span></a>
+    </div>
+    <div class="products-grid">
+      <div class="pcard fade-in">
+        <div class="pcard-img">
+          <img src="brand_assets/rollout_bobogna.jpg" alt="Gwiaździsta Noc — roll-up">
+        </div>
+        <div class="pcard-info">
+          <div class="pcard-name" data-i18n="products.p1.name">Gwiaździsta Noc</div>
+          <div class="pcard-sub" data-i18n="products.p1.sub">Van Gogh · Roll-up · 36 kieszeni</div>
+        </div>
+      </div>
+      <div class="pcard fade-in d1">
+        <div class="pcard-img">
+          <img src="brand_assets/rolled_on.png" alt="Wielka Fala — roll-up">
+        </div>
+        <div class="pcard-info">
+          <div class="pcard-name" data-i18n="products.p2.name">Wielka Fala</div>
+          <div class="pcard-sub" data-i18n="products.p2.sub">Hokusai · Roll-up</div>
+        </div>
+      </div>
+      <div class="pcard fade-in d2">
+        <div class="pcard-img">
+          <img src="brand_assets/rolled_out.png" alt="Etui rozłożone">
+        </div>
+        <div class="pcard-info">
+          <div class="pcard-name" data-i18n="products.p3.name">Lniane Etui</div>
+          <div class="pcard-sub" data-i18n="products.p3.sub">Natural Linen · 36 kieszeni</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section id="story" class="story">
+    <div class="story-visual fade-in">
+      <img src="brand_assets/pearl_lady.jpg" alt="Dziewczyna z perłą — kolorowanka Bobogna">
+    </div>
+    <div class="story-body">
+      <div class="section-label fade-up" data-i18n="story.label">002 / Historia</div>
+      <h2 class="section-title fade-up d1" data-i18n-html="story.title">
+        Sztuka<br><em>na wyciągnięcie</em><br>ręki
+      </h2>
+      <div class="gold-rule fade-up d2"></div>
+      <p class="story-text fade-up d2" data-i18n="story.text1">
+        Bobogna rodzi się z miłości do sztuki i codziennej twórczości. Nasze etui to więcej niż organizer — to przenośne atelier, które zabierasz do kawiarni, parku, w każdą podróż.
+      </p>
+      <p class="story-text fade-up d3" data-i18n="story.text2">
+        Każde etui jest uszyte ręcznie z premium tkanin nadrukowanych w arcydzieła malarstwa: Hokusai, Van Gogh, Vermeer. Bo piękno powinno być używane, nie chowane.
+      </p>
+      <a href="#" class="btn-primary fade-up d4" style="align-self: flex-start; margin-top: 8px;" data-i18n="story.cta">Poznaj markę</a>
+    </div>
+  </section>
+
+  <!-- LIFESTYLE -->
+  <section id="lifestyle" class="lifestyle">
+    <div class="lifestyle-header">
+      <div>
+        <div class="section-label" data-i18n="lifestyle.label">003 / Inspiracje</div>
+        <h2 class="section-title" data-i18n-html="lifestyle.title">
+          Noszone przez<br><em>artystów</em>
+        </h2>
+      </div>
+      <p class="lifestyle-desc" data-i18n="lifestyle.desc">
+        Od Rynku Głównego w Krakowie po bruki Paryża — Bobogna podróżuje razem z Tobą.
+      </p>
+    </div>
+    <div class="lifestyle-grid">
+      <div class="lcard fade-in">
+        <img src="brand_assets/krakow_bobogna.jpg" alt="Kraków" style="object-position: center 30%;">
+        <div class="lcard-caption" data-i18n="lifestyle.cap1">Kraków, Polska</div>
+      </div>
+      <div class="lcard fade-in d1">
+        <img src="brand_assets/paris_bobogna.jpg" alt="Paryż" style="aspect-ratio:4/5; object-fit:cover;">
+        <div class="lcard-caption">Paris, France</div>
+      </div>
+      <div class="lcard fade-in d2">
+        <img src="brand_assets/cafee_bobogna.jpg" alt="Kawiarnia" style="aspect-ratio:4/5; object-fit:cover;">
+        <div class="lcard-caption" data-i18n="lifestyle.cap3">W kawiarni</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE -->
+  <section class="quote-section">
+    <div class="quote-bg" aria-hidden="true">"</div>
+    <blockquote class="quote-text fade-up" data-i18n-html="quote.text">
+      "Twórczość nie zna miejsca ani czasu.<br>Tylko narzędzia muszą być godne sztuki."
+    </blockquote>
+    <p class="quote-attr fade-up d1">— Bobogna Edu Art</p>
+  </section>
+
+  <!-- CTA -->
+  <section id="contact" class="cta-band">
+    <div>
+      <div class="section-label" data-i18n="cta.label">004 / Sklep</div>
+      <h2 class="section-title" data-i18n-html="cta.title">
+        Znajdź swoje<br><em>etui artystyczne</em>
+      </h2>
+    </div>
+    <div class="cta-btns">
+      <a href="https://twojepióro.pl" class="btn-gold" data-i18n="cta.shop">Sklep online</a>
+      <a href="https://instagram.com/bobogna_edu_art" class="btn-outline-cream">@bobogna_edu_art</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="brand_assets/BOBOGNA_EDU_ART_black_a.png" alt="Bobogna Edu Art">
+        <p data-i18n-html="footer.tagline">Etui kreatywne z duszą.<br>Kraków, Polska.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4 data-i18n="footer.col1.title">Kolekcja</h4>
+          <ul>
+            <li><a href="#" data-i18n="footer.col1.l1">Etui Roll-up</a></li>
+            <li><a href="#" data-i18n="footer.col1.l2">Kolorowanki</a></li>
+            <li><a href="#" data-i18n="footer.col1.l3">Zestawy</a></li>
+            <li><a href="#" data-i18n="footer.col1.l4">Nowości</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.col2.title">Marka</h4>
+          <ul>
+            <li><a href="#" data-i18n="footer.col2.l1">O nas</a></li>
+            <li><a href="#" data-i18n="footer.col2.l2">Historia</a></li>
+            <li><a href="#" data-i18n="footer.col2.l3">Blog</a></li>
+            <li><a href="#" data-i18n="footer.col2.l4">Kontakt</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.col3.title">Pomoc</h4>
+          <ul>
+            <li><a href="#" data-i18n="footer.col3.l1">Wysyłka</a></li>
+            <li><a href="#" data-i18n="footer.col3.l2">Zwroty</a></li>
+            <li><a href="#" data-i18n="footer.col3.l3">FAQ</a></li>
+            <li><a href="#" data-i18n="footer.col3.l4">Regulamin</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy" data-i18n="footer.copy">© 2025 Bobogna Edu Art. Wszelkie prawa zastrzeżone.</p>
+      <a href="https://instagram.com/bobogna_edu_art" class="footer-ig">
+        <div class="ig-icon">
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <rect x="2" y="2" width="20" height="20" rx="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/>
+          </svg>
+        </div>
+        @bobogna_edu_art
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    // ─── TRANSLATIONS ───────────────────────────────────────────────
+    const translations = {
+      pl: {
+        'nav.collection':      'Kolekcja',
+        'nav.story':           'Historia',
+        'nav.inspirations':    'Inspiracje',
+        'nav.contact':         'Kontakt',
+        'nav.shop':            'Sklep',
+
+        'hero.eyebrow':        'Etui Kreatywne · Kolekcja 2025',
+        'hero.headline':       'Sztuka<br><em>którą nosisz</em><br>każdego dnia',
+        'hero.sub':            'Ręcznie szyte etui na przybory artystyczne, inspirowane arcydziełami malarstwa światowego. Dla tych, którzy noszą twórczość blisko serca.',
+        'hero.cta':            'Odkryj kolekcję',
+        'hero.secondary':      'Nasza historia <span>→</span>',
+        'hero.scroll':         'Przewiń w dół',
+
+        'products.label':      '001 / Kolekcja',
+        'products.title':      'Nasze<br><em>etui artystyczne</em>',
+        'products.viewAll':    'Zobacz wszystkie <span>→</span>',
+        'products.p1.name':    'Gwiaździsta Noc',
+        'products.p1.sub':     'Van Gogh · Roll-up · 36 kieszeni',
+        'products.p2.name':    'Wielka Fala',
+        'products.p2.sub':     'Hokusai · Roll-up',
+        'products.p3.name':    'Lniane Etui',
+        'products.p3.sub':     'Natural Linen · 36 kieszeni',
+
+        'story.label':         '002 / Historia',
+        'story.title':         'Sztuka<br><em>na wyciągnięcie</em><br>ręki',
+        'story.text1':         'Bobogna rodzi się z miłości do sztuki i codziennej twórczości. Nasze etui to więcej niż organizer — to przenośne atelier, które zabierasz do kawiarni, parku, w każdą podróż.',
+        'story.text2':         'Każde etui jest uszyte ręcznie z premium tkanin nadrukowanych w arcydzieła malarstwa: Hokusai, Van Gogh, Vermeer. Bo piękno powinno być używane, nie chowane.',
+        'story.cta':           'Poznaj markę',
+
+        'lifestyle.label':     '003 / Inspiracje',
+        'lifestyle.title':     'Noszone przez<br><em>artystów</em>',
+        'lifestyle.desc':      'Od Rynku Głównego w Krakowie po bruki Paryża — Bobogna podróżuje razem z Tobą.',
+        'lifestyle.cap1':      'Kraków, Polska',
+        'lifestyle.cap3':      'W kawiarni',
+
+        'quote.text':          '"Twórczość nie zna miejsca ani czasu.<br>Tylko narzędzia muszą być godne sztuki."',
+
+        'cta.label':           '004 / Sklep',
+        'cta.title':           'Znajdź swoje<br><em>etui artystyczne</em>',
+        'cta.shop':            'Sklep online',
+
+        'footer.tagline':      'Etui kreatywne z duszą.<br>Kraków, Polska.',
+        'footer.col1.title':   'Kolekcja',
+        'footer.col1.l1':      'Etui Roll-up',
+        'footer.col1.l2':      'Kolorowanki',
+        'footer.col1.l3':      'Zestawy',
+        'footer.col1.l4':      'Nowości',
+        'footer.col2.title':   'Marka',
+        'footer.col2.l1':      'O nas',
+        'footer.col2.l2':      'Historia',
+        'footer.col2.l3':      'Blog',
+        'footer.col2.l4':      'Kontakt',
+        'footer.col3.title':   'Pomoc',
+        'footer.col3.l1':      'Wysyłka',
+        'footer.col3.l2':      'Zwroty',
+        'footer.col3.l3':      'FAQ',
+        'footer.col3.l4':      'Regulamin',
+        'footer.copy':         '© 2026 Bobogna Edu Art. Wszelkie prawa zastrzeżone.',
+      },
+      en: {
+        'nav.collection':      'Collection',
+        'nav.story':           'Story',
+        'nav.inspirations':    'Inspirations',
+        'nav.contact':         'Contact',
+        'nav.shop':            'Shop',
+
+        'hero.eyebrow':        'Creative Cases · Collection 2025',
+        'hero.headline':       'Art<br><em>you carry</em><br>every day',
+        'hero.sub':            'Hand-sewn cases for art supplies, inspired by masterpieces of world painting. For those who carry creativity close to their heart.',
+        'hero.cta':            'Discover the collection',
+        'hero.secondary':      'Our story <span>→</span>',
+        'hero.scroll':         'Scroll down',
+
+        'products.label':      '001 / Collection',
+        'products.title':      'Our<br><em>art cases</em>',
+        'products.viewAll':    'View all <span>→</span>',
+        'products.p1.name':    'Starry Night',
+        'products.p1.sub':     'Van Gogh · Roll-up · 36 pockets',
+        'products.p2.name':    'The Great Wave',
+        'products.p2.sub':     'Hokusai · Roll-up',
+        'products.p3.name':    'Linen Case',
+        'products.p3.sub':     'Natural Linen · 36 pockets',
+
+        'story.label':         '002 / Story',
+        'story.title':         'Art<br><em>within</em><br>reach',
+        'story.text1':         'Bobogna is born from a love of art and everyday creativity. Our cases are more than an organizer — they are a portable atelier you take to the café, the park, on every journey.',
+        'story.text2':         'Every case is hand-sewn from premium fabrics printed with masterpieces of painting: Hokusai, Van Gogh, Vermeer. Because beauty should be used, not hidden.',
+        'story.cta':           'Discover the brand',
+
+        'lifestyle.label':     '003 / Inspirations',
+        'lifestyle.title':     'Worn by<br><em>artists</em>',
+        'lifestyle.desc':      'From the Main Square in Kraków to the cobblestones of Paris — Bobogna travels with you.',
+        'lifestyle.cap1':      'Kraków, Poland',
+        'lifestyle.cap3':      'At the café',
+
+        'quote.text':          '"Creativity knows no place or time.<br>Only the tools must be worthy of art."',
+
+        'cta.label':           '004 / Shop',
+        'cta.title':           'Find your<br><em>art case</em>',
+        'cta.shop':            'Online shop',
+
+        'footer.tagline':      'Creative cases with soul.<br>Kraków, Poland.',
+        'footer.col1.title':   'Collection',
+        'footer.col1.l1':      'Roll-up Cases',
+        'footer.col1.l2':      'Coloring Books',
+        'footer.col1.l3':      'Sets',
+        'footer.col1.l4':      'New Arrivals',
+        'footer.col2.title':   'Brand',
+        'footer.col2.l1':      'About us',
+        'footer.col2.l2':      'Story',
+        'footer.col2.l3':      'Blog',
+        'footer.col2.l4':      'Contact',
+        'footer.col3.title':   'Help',
+        'footer.col3.l1':      'Shipping',
+        'footer.col3.l2':      'Returns',
+        'footer.col3.l3':      'FAQ',
+        'footer.col3.l4':      'Terms',
+        'footer.copy':         '© 2026 Bobogna Edu Art. All rights reserved.',
+      }
+    };
+
+    // ─── APPLY LANGUAGE ─────────────────────────────────────────────
+    function applyLang(lang) {
+      const t = translations[lang];
+      if (!t) return;
+
+      document.documentElement.lang = lang;
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (t[key] !== undefined) el.textContent = t[key];
+      });
+
+      document.querySelectorAll('[data-i18n-html]').forEach(el => {
+        const key = el.getAttribute('data-i18n-html');
+        if (t[key] !== undefined) el.innerHTML = t[key];
+      });
+
+      // Update toggle button states
+      document.getElementById('btn-pl').classList.toggle('active', lang === 'pl');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    }
+
+    // ─── SET LANG (manual) ──────────────────────────────────────────
+    function setLang(lang) {
+      localStorage.setItem('lang', lang);
+      applyLang(lang);
+    }
+
+    // ─── AUTO-DETECT ON LOAD ─────────────────────────────────────────
+    (async function() {
+      // 1. Honour saved preference
+      const saved = localStorage.getItem('lang');
+      if (saved && translations[saved]) {
+        applyLang(saved);
+        return;
+      }
+
+      // 2. Try country-based detection via IP API
+      try {
+        const res = await fetch('https://api.country.is/', { cache: 'force-cache' });
+        const data = await res.json();
+        applyLang(data.country === 'PL' ? 'pl' : 'en');
+        return;
+      } catch (_) { /* fall through */ }
+
+      // 3. Fallback: browser language
+      const browserLang = navigator.language || navigator.languages?.[0] || '';
+      applyLang(browserLang.startsWith('pl') ? 'pl' : 'en');
+    })();
+
+    // ─── STICKY NAV ──────────────────────────────────────────────────
+    const navEl = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      navEl.classList.toggle('scrolled', window.scrollY > 50);
+    }, { passive: true });
+
+    // ─── SCROLL ANIMATIONS ───────────────────────────────────────────
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) e.target.classList.add('vis');
+      });
+    }, { threshold: 0, rootMargin: '200px 0px 200px 0px' });
+
+    document.querySelectorAll('.fade-up, .fade-in').forEach(el => io.observe(el));
+
+    setTimeout(() => {
+      document.querySelectorAll('.hero .fade-up, .hero .fade-in').forEach(el => el.classList.add('vis'));
+    }, 100);
+
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.querySelectorAll('.fade-up, .fade-in').forEach(el => el.classList.add('vis'));
+      }, 600);
+    });
+  </script>
+</body>
 </html>
