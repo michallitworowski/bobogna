@@ -70,6 +70,9 @@
       transition: color 0.2s ease;
     }
     .nav-links a:hover { color: var(--gold); }
+    .nav-right {
+      display: flex; align-items: center; gap: 20px;
+    }
     .nav-cta {
       font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
       color: var(--navy); border: 1px solid var(--navy);
@@ -77,6 +80,21 @@
       transition: background 0.22s ease, color 0.22s ease;
     }
     .nav-cta:hover { background: var(--navy); color: var(--cream); }
+
+    /* Language toggle */
+    .lang-toggle {
+      display: flex; align-items: center; gap: 4px;
+    }
+    .lang-btn {
+      font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase;
+      color: #aaa; background: none; border: none; cursor: pointer;
+      padding: 2px 4px;
+      transition: color 0.2s ease;
+      font-family: 'Jost', sans-serif;
+    }
+    .lang-btn.active { color: var(--gold); }
+    .lang-btn:hover { color: var(--charcoal); }
+    .lang-sep { font-size: 9px; color: #ccc; }
 
     /* ─── HERO ─── */
     .hero {
@@ -472,33 +490,40 @@
       <img src="brand_assets/BOBOGNA_EDU_ART_black_a.png" alt="Bobogna Edu Art">
     </div>
     <ul class="nav-links">
-      <li><a href="#products">Kolekcja</a></li>
-      <li><a href="#story">Historia</a></li>
-      <li><a href="#lifestyle">Inspiracje</a></li>
-      <li><a href="#contact">Kontakt</a></li>
+      <li><a href="#products" data-i18n="nav.collection">Kolekcja</a></li>
+      <li><a href="#story" data-i18n="nav.story">Historia</a></li>
+      <li><a href="#lifestyle" data-i18n="nav.inspirations">Inspiracje</a></li>
+      <li><a href="#contact" data-i18n="nav.contact">Kontakt</a></li>
     </ul>
-    <a href="#products" class="nav-cta">Sklep</a>
+    <div class="nav-right">
+      <div class="lang-toggle">
+        <button class="lang-btn active" id="btn-pl" onclick="setLang('pl')">PL</button>
+        <span class="lang-sep">/</span>
+        <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+      </div>
+      <a href="#products" class="nav-cta" data-i18n="nav.shop">Sklep</a>
+    </div>
   </nav>
 
   <!-- HERO -->
   <section class="hero">
     <div class="hero-left">
-      <div class="hero-eyebrow fade-up">Etui Kreatywne &middot; Kolekcja 2025</div>
-      <h1 class="hero-headline fade-up d1">
+      <div class="hero-eyebrow fade-up" data-i18n="hero.eyebrow">Etui Kreatywne &middot; Kolekcja 2025</div>
+      <h1 class="hero-headline fade-up d1" data-i18n-html="hero.headline">
         Sztuka<br>
         <em>którą nosisz</em><br>
         każdego dnia
       </h1>
-      <p class="hero-sub fade-up d2">
+      <p class="hero-sub fade-up d2" data-i18n="hero.sub">
         Ręcznie szyte etui na przybory artystyczne, inspirowane arcydziełami malarstwa światowego. Dla tych, którzy noszą twórczość blisko serca.
       </p>
       <div class="hero-actions fade-up d3">
-        <a href="#products" class="btn-primary">Odkryj kolekcję</a>
-        <a href="#story" class="btn-ghost">Nasza historia <span>→</span></a>
+        <a href="#products" class="btn-primary" data-i18n="hero.cta">Odkryj kolekcję</a>
+        <a href="#story" class="btn-ghost" data-i18n-html="hero.secondary">Nasza historia <span>→</span></a>
       </div>
       <div class="hero-scroll fade-up d4">
         <div class="hero-scroll-line"></div>
-        <p>Przewiń w dół</p>
+        <p data-i18n="hero.scroll">Przewiń w dół</p>
       </div>
     </div>
     <div class="hero-right fade-in">
@@ -541,10 +566,10 @@
   <section id="products" class="products">
     <div class="products-header">
       <div>
-        <div class="section-label fade-up">001 / Kolekcja</div>
-        <h2 class="section-title fade-up d1">Nasze<br><em>etui artystyczne</em></h2>
+        <div class="section-label fade-up" data-i18n="products.label">001 / Kolekcja</div>
+        <h2 class="section-title fade-up d1" data-i18n-html="products.title">Nasze<br><em>etui artystyczne</em></h2>
       </div>
-      <a href="#" class="btn-ghost fade-up d1">Zobacz wszystkie <span>→</span></a>
+      <a href="#" class="btn-ghost fade-up d1" data-i18n-html="products.viewAll">Zobacz wszystkie <span>→</span></a>
     </div>
     <div class="products-grid">
       <div class="pcard fade-in">
@@ -552,8 +577,8 @@
           <img src="brand_assets/rollout_bobogna.jpg" alt="Gwiaździsta Noc — roll-up">
         </div>
         <div class="pcard-info">
-          <div class="pcard-name">Gwiaździsta Noc</div>
-          <div class="pcard-sub">Van Gogh · Roll-up · 36 kieszeni</div>
+          <div class="pcard-name" data-i18n="products.p1.name">Gwiaździsta Noc</div>
+          <div class="pcard-sub" data-i18n="products.p1.sub">Van Gogh · Roll-up · 36 kieszeni</div>
         </div>
       </div>
       <div class="pcard fade-in d1">
@@ -561,8 +586,8 @@
           <img src="brand_assets/rolled_on.png" alt="Wielka Fala — roll-up">
         </div>
         <div class="pcard-info">
-          <div class="pcard-name">Wielka Fala</div>
-          <div class="pcard-sub">Hokusai · Roll-up</div>
+          <div class="pcard-name" data-i18n="products.p2.name">Wielka Fala</div>
+          <div class="pcard-sub" data-i18n="products.p2.sub">Hokusai · Roll-up</div>
         </div>
       </div>
       <div class="pcard fade-in d2">
@@ -570,8 +595,8 @@
           <img src="brand_assets/rolled_out.png" alt="Etui rozłożone">
         </div>
         <div class="pcard-info">
-          <div class="pcard-name">Lniane Etui</div>
-          <div class="pcard-sub">Natural Linen · 36 kieszeni</div>
+          <div class="pcard-name" data-i18n="products.p3.name">Lniane Etui</div>
+          <div class="pcard-sub" data-i18n="products.p3.sub">Natural Linen · 36 kieszeni</div>
         </div>
       </div>
     </div>
@@ -583,18 +608,18 @@
       <img src="brand_assets/pearl_lady.jpg" alt="Dziewczyna z perłą — kolorowanka Bobogna">
     </div>
     <div class="story-body">
-      <div class="section-label fade-up">002 / Historia</div>
-      <h2 class="section-title fade-up d1">
+      <div class="section-label fade-up" data-i18n="story.label">002 / Historia</div>
+      <h2 class="section-title fade-up d1" data-i18n-html="story.title">
         Sztuka<br><em>na wyciągnięcie</em><br>ręki
       </h2>
       <div class="gold-rule fade-up d2"></div>
-      <p class="story-text fade-up d2">
+      <p class="story-text fade-up d2" data-i18n="story.text1">
         Bobogna rodzi się z miłości do sztuki i codziennej twórczości. Nasze etui to więcej niż organizer — to przenośne atelier, które zabierasz do kawiarni, parku, w każdą podróż.
       </p>
-      <p class="story-text fade-up d3">
+      <p class="story-text fade-up d3" data-i18n="story.text2">
         Każde etui jest uszyte ręcznie z premium tkanin nadrukowanych w arcydzieła malarstwa: Hokusai, Van Gogh, Vermeer. Bo piękno powinno być używane, nie chowane.
       </p>
-      <a href="#" class="btn-primary fade-up d4" style="align-self: flex-start; margin-top: 8px;">Poznaj markę</a>
+      <a href="#" class="btn-primary fade-up d4" style="align-self: flex-start; margin-top: 8px;" data-i18n="story.cta">Poznaj markę</a>
     </div>
   </section>
 
@@ -602,19 +627,19 @@
   <section id="lifestyle" class="lifestyle">
     <div class="lifestyle-header">
       <div>
-        <div class="section-label">003 / Inspiracje</div>
-        <h2 class="section-title">
+        <div class="section-label" data-i18n="lifestyle.label">003 / Inspiracje</div>
+        <h2 class="section-title" data-i18n-html="lifestyle.title">
           Noszone przez<br><em>artystów</em>
         </h2>
       </div>
-      <p class="lifestyle-desc">
+      <p class="lifestyle-desc" data-i18n="lifestyle.desc">
         Od Rynku Głównego w Krakowie po bruki Paryża — Bobogna podróżuje razem z Tobą.
       </p>
     </div>
     <div class="lifestyle-grid">
       <div class="lcard fade-in">
         <img src="brand_assets/krakow_bobogna.jpg" alt="Kraków" style="object-position: center 30%;">
-        <div class="lcard-caption">Kraków, Polska</div>
+        <div class="lcard-caption" data-i18n="lifestyle.cap1">Kraków, Polska</div>
       </div>
       <div class="lcard fade-in d1">
         <img src="brand_assets/paris_bobogna.jpg" alt="Paryż" style="aspect-ratio:4/5; object-fit:cover;">
@@ -622,7 +647,7 @@
       </div>
       <div class="lcard fade-in d2">
         <img src="brand_assets/cafee_bobogna.jpg" alt="Kawiarnia" style="aspect-ratio:4/5; object-fit:cover;">
-        <div class="lcard-caption">W kawiarni</div>
+        <div class="lcard-caption" data-i18n="lifestyle.cap3">W kawiarni</div>
       </div>
     </div>
   </section>
@@ -630,7 +655,7 @@
   <!-- QUOTE -->
   <section class="quote-section">
     <div class="quote-bg" aria-hidden="true">"</div>
-    <blockquote class="quote-text fade-up">
+    <blockquote class="quote-text fade-up" data-i18n-html="quote.text">
       "Twórczość nie zna miejsca ani czasu.<br>Tylko narzędzia muszą być godne sztuki."
     </blockquote>
     <p class="quote-attr fade-up d1">— Bobogna Edu Art</p>
@@ -639,13 +664,13 @@
   <!-- CTA -->
   <section id="contact" class="cta-band">
     <div>
-      <div class="section-label">004 / Sklep</div>
-      <h2 class="section-title">
+      <div class="section-label" data-i18n="cta.label">004 / Sklep</div>
+      <h2 class="section-title" data-i18n-html="cta.title">
         Znajdź swoje<br><em>etui artystyczne</em>
       </h2>
     </div>
     <div class="cta-btns">
-      <a href="https://twojepióro.pl" class="btn-gold">Sklep online</a>
+      <a href="https://twojepióro.pl" class="btn-gold" data-i18n="cta.shop">Sklep online</a>
       <a href="https://instagram.com/bobogna_edu_art" class="btn-outline-cream">@bobogna_edu_art</a>
     </div>
   </section>
@@ -655,40 +680,40 @@
     <div class="footer-top">
       <div class="footer-brand">
         <img src="brand_assets/BOBOGNA_EDU_ART_black_a.png" alt="Bobogna Edu Art">
-        <p>Etui kreatywne z duszą.<br>Kraków, Polska.</p>
+        <p data-i18n-html="footer.tagline">Etui kreatywne z duszą.<br>Kraków, Polska.</p>
       </div>
       <div class="footer-cols">
         <div class="footer-col">
-          <h4>Kolekcja</h4>
+          <h4 data-i18n="footer.col1.title">Kolekcja</h4>
           <ul>
-            <li><a href="#">Etui Roll-up</a></li>
-            <li><a href="#">Kolorowanki</a></li>
-            <li><a href="#">Zestawy</a></li>
-            <li><a href="#">Nowości</a></li>
+            <li><a href="#" data-i18n="footer.col1.l1">Etui Roll-up</a></li>
+            <li><a href="#" data-i18n="footer.col1.l2">Kolorowanki</a></li>
+            <li><a href="#" data-i18n="footer.col1.l3">Zestawy</a></li>
+            <li><a href="#" data-i18n="footer.col1.l4">Nowości</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Marka</h4>
+          <h4 data-i18n="footer.col2.title">Marka</h4>
           <ul>
-            <li><a href="#">O nas</a></li>
-            <li><a href="#">Historia</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Kontakt</a></li>
+            <li><a href="#" data-i18n="footer.col2.l1">O nas</a></li>
+            <li><a href="#" data-i18n="footer.col2.l2">Historia</a></li>
+            <li><a href="#" data-i18n="footer.col2.l3">Blog</a></li>
+            <li><a href="#" data-i18n="footer.col2.l4">Kontakt</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Pomoc</h4>
+          <h4 data-i18n="footer.col3.title">Pomoc</h4>
           <ul>
-            <li><a href="#">Wysyłka</a></li>
-            <li><a href="#">Zwroty</a></li>
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">Regulamin</a></li>
+            <li><a href="#" data-i18n="footer.col3.l1">Wysyłka</a></li>
+            <li><a href="#" data-i18n="footer.col3.l2">Zwroty</a></li>
+            <li><a href="#" data-i18n="footer.col3.l3">FAQ</a></li>
+            <li><a href="#" data-i18n="footer.col3.l4">Regulamin</a></li>
           </ul>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <p class="footer-copy">© 2025 Bobogna Edu Art. Wszelkie prawa zastrzeżone.</p>
+      <p class="footer-copy" data-i18n="footer.copy">© 2025 Bobogna Edu Art. Wszelkie prawa zastrzeżone.</p>
       <a href="https://instagram.com/bobogna_edu_art" class="footer-ig">
         <div class="ig-icon">
           <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
@@ -703,30 +728,199 @@
   </footer>
 
   <script>
-    // Sticky nav
+    // ─── TRANSLATIONS ───────────────────────────────────────────────
+    const translations = {
+      pl: {
+        'nav.collection':      'Kolekcja',
+        'nav.story':           'Historia',
+        'nav.inspirations':    'Inspiracje',
+        'nav.contact':         'Kontakt',
+        'nav.shop':            'Sklep',
+
+        'hero.eyebrow':        'Etui Kreatywne · Kolekcja 2025',
+        'hero.headline':       'Sztuka<br><em>którą nosisz</em><br>każdego dnia',
+        'hero.sub':            'Ręcznie szyte etui na przybory artystyczne, inspirowane arcydziełami malarstwa światowego. Dla tych, którzy noszą twórczość blisko serca.',
+        'hero.cta':            'Odkryj kolekcję',
+        'hero.secondary':      'Nasza historia <span>→</span>',
+        'hero.scroll':         'Przewiń w dół',
+
+        'products.label':      '001 / Kolekcja',
+        'products.title':      'Nasze<br><em>etui artystyczne</em>',
+        'products.viewAll':    'Zobacz wszystkie <span>→</span>',
+        'products.p1.name':    'Gwiaździsta Noc',
+        'products.p1.sub':     'Van Gogh · Roll-up · 36 kieszeni',
+        'products.p2.name':    'Wielka Fala',
+        'products.p2.sub':     'Hokusai · Roll-up',
+        'products.p3.name':    'Lniane Etui',
+        'products.p3.sub':     'Natural Linen · 36 kieszeni',
+
+        'story.label':         '002 / Historia',
+        'story.title':         'Sztuka<br><em>na wyciągnięcie</em><br>ręki',
+        'story.text1':         'Bobogna rodzi się z miłości do sztuki i codziennej twórczości. Nasze etui to więcej niż organizer — to przenośne atelier, które zabierasz do kawiarni, parku, w każdą podróż.',
+        'story.text2':         'Każde etui jest uszyte ręcznie z premium tkanin nadrukowanych w arcydzieła malarstwa: Hokusai, Van Gogh, Vermeer. Bo piękno powinno być używane, nie chowane.',
+        'story.cta':           'Poznaj markę',
+
+        'lifestyle.label':     '003 / Inspiracje',
+        'lifestyle.title':     'Noszone przez<br><em>artystów</em>',
+        'lifestyle.desc':      'Od Rynku Głównego w Krakowie po bruki Paryża — Bobogna podróżuje razem z Tobą.',
+        'lifestyle.cap1':      'Kraków, Polska',
+        'lifestyle.cap3':      'W kawiarni',
+
+        'quote.text':          '"Twórczość nie zna miejsca ani czasu.<br>Tylko narzędzia muszą być godne sztuki."',
+
+        'cta.label':           '004 / Sklep',
+        'cta.title':           'Znajdź swoje<br><em>etui artystyczne</em>',
+        'cta.shop':            'Sklep online',
+
+        'footer.tagline':      'Etui kreatywne z duszą.<br>Kraków, Polska.',
+        'footer.col1.title':   'Kolekcja',
+        'footer.col1.l1':      'Etui Roll-up',
+        'footer.col1.l2':      'Kolorowanki',
+        'footer.col1.l3':      'Zestawy',
+        'footer.col1.l4':      'Nowości',
+        'footer.col2.title':   'Marka',
+        'footer.col2.l1':      'O nas',
+        'footer.col2.l2':      'Historia',
+        'footer.col2.l3':      'Blog',
+        'footer.col2.l4':      'Kontakt',
+        'footer.col3.title':   'Pomoc',
+        'footer.col3.l1':      'Wysyłka',
+        'footer.col3.l2':      'Zwroty',
+        'footer.col3.l3':      'FAQ',
+        'footer.col3.l4':      'Regulamin',
+        'footer.copy':         '© 2025 Bobogna Edu Art. Wszelkie prawa zastrzeżone.',
+      },
+      en: {
+        'nav.collection':      'Collection',
+        'nav.story':           'Story',
+        'nav.inspirations':    'Inspirations',
+        'nav.contact':         'Contact',
+        'nav.shop':            'Shop',
+
+        'hero.eyebrow':        'Creative Cases · Collection 2025',
+        'hero.headline':       'Art<br><em>you carry</em><br>every day',
+        'hero.sub':            'Hand-sewn cases for art supplies, inspired by masterpieces of world painting. For those who carry creativity close to their heart.',
+        'hero.cta':            'Discover the collection',
+        'hero.secondary':      'Our story <span>→</span>',
+        'hero.scroll':         'Scroll down',
+
+        'products.label':      '001 / Collection',
+        'products.title':      'Our<br><em>art cases</em>',
+        'products.viewAll':    'View all <span>→</span>',
+        'products.p1.name':    'Starry Night',
+        'products.p1.sub':     'Van Gogh · Roll-up · 36 pockets',
+        'products.p2.name':    'The Great Wave',
+        'products.p2.sub':     'Hokusai · Roll-up',
+        'products.p3.name':    'Linen Case',
+        'products.p3.sub':     'Natural Linen · 36 pockets',
+
+        'story.label':         '002 / Story',
+        'story.title':         'Art<br><em>within</em><br>reach',
+        'story.text1':         'Bobogna is born from a love of art and everyday creativity. Our cases are more than an organizer — they are a portable atelier you take to the café, the park, on every journey.',
+        'story.text2':         'Every case is hand-sewn from premium fabrics printed with masterpieces of painting: Hokusai, Van Gogh, Vermeer. Because beauty should be used, not hidden.',
+        'story.cta':           'Discover the brand',
+
+        'lifestyle.label':     '003 / Inspirations',
+        'lifestyle.title':     'Worn by<br><em>artists</em>',
+        'lifestyle.desc':      'From the Main Square in Kraków to the cobblestones of Paris — Bobogna travels with you.',
+        'lifestyle.cap1':      'Kraków, Poland',
+        'lifestyle.cap3':      'At the café',
+
+        'quote.text':          '"Creativity knows no place or time.<br>Only the tools must be worthy of art."',
+
+        'cta.label':           '004 / Shop',
+        'cta.title':           'Find your<br><em>art case</em>',
+        'cta.shop':            'Online shop',
+
+        'footer.tagline':      'Creative cases with soul.<br>Kraków, Poland.',
+        'footer.col1.title':   'Collection',
+        'footer.col1.l1':      'Roll-up Cases',
+        'footer.col1.l2':      'Coloring Books',
+        'footer.col1.l3':      'Sets',
+        'footer.col1.l4':      'New Arrivals',
+        'footer.col2.title':   'Brand',
+        'footer.col2.l1':      'About us',
+        'footer.col2.l2':      'Story',
+        'footer.col2.l3':      'Blog',
+        'footer.col2.l4':      'Contact',
+        'footer.col3.title':   'Help',
+        'footer.col3.l1':      'Shipping',
+        'footer.col3.l2':      'Returns',
+        'footer.col3.l3':      'FAQ',
+        'footer.col3.l4':      'Terms',
+        'footer.copy':         '© 2025 Bobogna Edu Art. All rights reserved.',
+      }
+    };
+
+    // ─── APPLY LANGUAGE ─────────────────────────────────────────────
+    function applyLang(lang) {
+      const t = translations[lang];
+      if (!t) return;
+
+      document.documentElement.lang = lang;
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (t[key] !== undefined) el.textContent = t[key];
+      });
+
+      document.querySelectorAll('[data-i18n-html]').forEach(el => {
+        const key = el.getAttribute('data-i18n-html');
+        if (t[key] !== undefined) el.innerHTML = t[key];
+      });
+
+      // Update toggle button states
+      document.getElementById('btn-pl').classList.toggle('active', lang === 'pl');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    }
+
+    // ─── SET LANG (manual) ──────────────────────────────────────────
+    function setLang(lang) {
+      localStorage.setItem('lang', lang);
+      applyLang(lang);
+    }
+
+    // ─── AUTO-DETECT ON LOAD ─────────────────────────────────────────
+    (async function() {
+      // 1. Honour saved preference
+      const saved = localStorage.getItem('lang');
+      if (saved && translations[saved]) {
+        applyLang(saved);
+        return;
+      }
+
+      // 2. Try country-based detection via IP API
+      try {
+        const res = await fetch('https://api.country.is/', { cache: 'force-cache' });
+        const data = await res.json();
+        applyLang(data.country === 'PL' ? 'pl' : 'en');
+        return;
+      } catch (_) { /* fall through */ }
+
+      // 3. Fallback: browser language
+      const browserLang = navigator.language || navigator.languages?.[0] || '';
+      applyLang(browserLang.startsWith('pl') ? 'pl' : 'en');
+    })();
+
+    // ─── STICKY NAV ──────────────────────────────────────────────────
     const navEl = document.getElementById('nav');
     window.addEventListener('scroll', () => {
       navEl.classList.toggle('scrolled', window.scrollY > 50);
     }, { passive: true });
 
-    // Scroll-triggered fade animations
-    // Use generous rootMargin so elements pre-load before entering view
+    // ─── SCROLL ANIMATIONS ───────────────────────────────────────────
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('vis');
-        }
+        if (e.isIntersecting) e.target.classList.add('vis');
       });
     }, { threshold: 0, rootMargin: '200px 0px 200px 0px' });
 
     document.querySelectorAll('.fade-up, .fade-in').forEach(el => io.observe(el));
 
-    // Trigger hero animations immediately
     setTimeout(() => {
       document.querySelectorAll('.hero .fade-up, .hero .fade-in').forEach(el => el.classList.add('vis'));
     }, 100);
 
-    // After page fully loads, trigger everything that's still invisible (catches off-screen elements)
     window.addEventListener('load', () => {
       setTimeout(() => {
         document.querySelectorAll('.fade-up, .fade-in').forEach(el => el.classList.add('vis'));
