@@ -582,7 +582,8 @@
       text-align: center;
       position: relative; overflow: hidden;
     }
-    .quote-bg {
+    .quote-section::before {
+      content: '\201C';
       position: absolute; top: -80px;
       left: 50%; transform: translateX(-50%);
       font-family: 'Cormorant Garamond', serif;
@@ -590,6 +591,7 @@
       color: rgba(184,146,42,0.045);
       pointer-events: none;
       user-select: none;
+      z-index: 0;
     }
     .quote-text {
       font-family: 'Cormorant Garamond', serif;
@@ -930,7 +932,7 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-left">
-      <div class="hero-eyebrow fade-up" data-i18n="hero.eyebrow">Etui Kreatywne · Kolekcja 2025</div>
+      <div class="hero-eyebrow fade-up" data-i18n="hero.eyebrow">Etui Kreatywne · Kolekcja 2026</div>
       <h1 class="hero-headline fade-up d1" data-i18n-html="hero.headline">
         Sztuka<br>
         <em>którą nosisz</em><br>
@@ -1103,7 +1105,6 @@
 
   <!-- QUOTE -->
   <section class="quote-section">
-    <div class="quote-bg" aria-hidden="true">"</div>
     <blockquote class="quote-text fade-up" data-i18n-html="quote.text">
       "Twórczość nie zna miejsca ani czasu.<br>Tylko narzędzia muszą być godne sztuki."
     </blockquote>
@@ -1203,7 +1204,7 @@
         'nav.contact':         'Kontakt',
         'nav.shop':            'Sklep',
 
-        'hero.eyebrow':        'Etui Kreatywne · Kolekcja 2025',
+        'hero.eyebrow':        'Etui Kreatywne · Kolekcja 2026',
         'hero.headline':       'Sztuka<br><em>którą nosisz</em><br>każdego dnia',
         'hero.sub':            'Ręcznie szyte etui na przybory artystyczne, inspirowane arcydziełami malarstwa światowego. Dla tych, którzy noszą twórczość blisko serca.',
         'hero.cta':            'Odkryj kolekcję',
@@ -1282,7 +1283,7 @@
         'nav.contact':         'Contact',
         'nav.shop':            'Shop',
 
-        'hero.eyebrow':        'Creative Cases · Collection 2025',
+        'hero.eyebrow':        'Creative Cases · Collection 2026',
         'hero.headline':       'Art<br><em>you carry</em><br>every day',
         'hero.sub':            'Hand-sewn cases for art supplies, inspired by masterpieces of world painting. For those who carry creativity close to their heart.',
         'hero.cta':            'Discover the collection',
@@ -1361,7 +1362,7 @@
         'nav.contact':         'Kontakt',
         'nav.shop':            'Butik',
 
-        'hero.eyebrow':        'Kreativa Fodral · Kollektion 2025',
+        'hero.eyebrow':        'Kreativa Fodral · Kollektion 2026',
         'hero.headline':       'Konst<br><em>du bär med dig</em><br>varje dag',
         'hero.sub':            'Handsydda fodral för konsttillbehör, inspirerade av världsmåleriets mästerverk. För dig som bär kreativiteten nära hjärtat.',
         'hero.cta':            'Utforska kollektionen',
