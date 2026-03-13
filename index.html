@@ -434,15 +434,40 @@
       min-height: 700px;
       background: var(--cream);
     }
-    .story-visual { position: relative; overflow: hidden; min-height: 400px; }
+    .story-visual { position: relative; overflow: hidden; min-height: 400px; cursor: pointer; }
     .story-visual img {
       width: 100%; height: 133%;
       object-fit: cover; object-position: center top; display: block;
+      transition: transform 0.65s cubic-bezier(0.25,0.46,0.45,0.94);
     }
+    .story-visual:hover img { transform: scale(1.04); }
     .story-visual::after {
       content: '';
       position: absolute; inset: 0;
       background: linear-gradient(to right, rgba(28,43,74,0.1) 0%, transparent 40%);
+    }
+    .story-overlay {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      padding: 28px;
+      background: linear-gradient(to top, rgba(28,43,74,0.88) 0%, transparent 100%);
+      color: white;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity 0.35s ease, transform 0.35s ease;
+      z-index: 2;
+    }
+    .story-visual:hover .story-overlay { opacity: 1; transform: translateY(0); }
+    @media (hover: none) {
+      .story-overlay { opacity: 1; transform: translateY(0); }
+    }
+    .story-overlay-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.7rem; font-weight: 400;
+      margin-bottom: 5px;
+    }
+    .story-overlay-sub {
+      font-size: 10px; letter-spacing: 0.15em;
+      text-transform: uppercase; opacity: 0.7;
     }
     .story-body {
       padding: 100px 80px;
@@ -903,6 +928,10 @@
   <section id="story" class="story">
     <div class="story-visual fade-in">
       <img src="brand_assets/pearl_lady.jpg" alt="Dziewczyna z perłą — kolorowanka Bobogna">
+      <div class="story-overlay">
+        <div class="story-overlay-name" data-i18n="story.artwork.name">Dziewczyna z Perłą</div>
+        <div class="story-overlay-sub" data-i18n="story.artwork.sub">Vermeer · Kolorowanka Bobogna</div>
+      </div>
     </div>
     <div class="story-body">
       <div class="section-label fade-up" data-i18n="story.label">002 / Historia</div>
@@ -1061,6 +1090,8 @@
         'email.success':       'Dziękujemy! Protokół Bobogna trafi na Twój e-mail wkrótce ✦',
         'email.privacy':       'Bez spamu. Możesz zrezygnować w każdej chwili.',
 
+        'story.artwork.name':   'Dziewczyna z Perłą',
+        'story.artwork.sub':    'Vermeer · Kolorowanka Bobogna',
         'story.label':         '002 / Historia',
         'story.title':         'Sztuka<br><em>na wyciągnięcie</em><br>ręki',
         'story.text1':         'Bobogna rodzi się z miłości do sztuki i codziennej twórczości. Nasze etui to więcej niż organizer — to przenośne atelier, które zabierasz do kawiarni, parku, w każdą podróż.',
@@ -1131,6 +1162,8 @@
         'email.success':       'Thank you! The Bobogna Protocol will arrive in your inbox shortly ✦',
         'email.privacy':       'No spam. Unsubscribe at any time.',
 
+        'story.artwork.name':   'Girl with a Pearl Earring',
+        'story.artwork.sub':    'Vermeer · Bobogna Coloring Book',
         'story.label':         '002 / Story',
         'story.title':         'Art<br><em>within</em><br>reach',
         'story.text1':         'Bobogna is born from a love of art and everyday creativity. Our cases are more than an organizer — they are a portable atelier you take to the café, the park, on every journey.',
