@@ -814,6 +814,64 @@
       footer { padding: 48px 20px 28px; }
       .footer-cols { flex-direction: column; gap: 32px; }
     }
+
+    /* ─── COOKIE BANNER ──────────────────────────────────────────────── */
+    #cookie-banner {
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 9000;
+      background: var(--navy);
+      padding: 28px 64px;
+      display: flex; align-items: center; gap: 40px;
+      box-shadow: 0 -4px 40px rgba(0,0,0,0.28);
+      transform: translateY(100%);
+      transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    #cookie-banner.visible { transform: translateY(0); }
+    #cookie-banner.hiding {
+      transform: translateY(100%);
+      transition: transform 0.4s cubic-bezier(0.55, 0, 0.55, 0.2);
+    }
+    .cookie-text { flex: 1; }
+    .cookie-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem; font-style: italic; font-weight: 300;
+      color: var(--gold); letter-spacing: 0.01em; margin-bottom: 6px;
+    }
+    .cookie-body {
+      font-size: 12px; font-weight: 300; line-height: 1.7;
+      color: rgba(245,240,232,0.55);
+    }
+    .cookie-body a {
+      color: rgba(245,240,232,0.75); text-decoration: underline;
+      text-decoration-color: rgba(245,240,232,0.3);
+      transition: color 0.2s ease;
+    }
+    .cookie-body a:hover { color: var(--gold); }
+    .cookie-actions { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .cookie-accept {
+      font-family: 'Jost', sans-serif; font-size: 10px;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      background: var(--gold); color: var(--warm-white);
+      border: none; padding: 12px 28px; cursor: pointer;
+      transition: background 0.2s ease, transform 0.15s ease;
+    }
+    .cookie-accept:hover { background: #cfa84a; transform: translateY(-1px); }
+    .cookie-accept:active { transform: translateY(0); }
+    .cookie-decline {
+      font-family: 'Jost', sans-serif; font-size: 10px;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      background: transparent; color: rgba(245,240,232,0.4);
+      border: 1px solid rgba(245,240,232,0.15); padding: 11px 20px; cursor: pointer;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+    .cookie-decline:hover { color: rgba(245,240,232,0.75); border-color: rgba(245,240,232,0.35); }
+    @media (max-width: 900px) {
+      #cookie-banner { padding: 24px 32px; gap: 24px; flex-direction: column; align-items: flex-start; }
+      .cookie-actions { width: 100%; }
+      .cookie-accept, .cookie-decline { flex: 1; text-align: center; }
+    }
+    @media (max-width: 480px) {
+      #cookie-banner { padding: 20px 20px; }
+    }
   </style>
   <script defer src="/_vercel/insights/script.js"></script>
   <script defer src="/_vercel/speed-insights/script.js"></script>
@@ -1112,6 +1170,20 @@
     </div>
   </footer>
 
+  <!-- COOKIE BANNER -->
+  <div id="cookie-banner" role="dialog" aria-label="Cookie consent">
+    <div class="cookie-text">
+      <div class="cookie-title" data-i18n="cookie.title">Ciasteczka z duszą.</div>
+      <div class="cookie-body">
+        <span data-i18n="cookie.text">Używamy plików cookies, aby Twoje doświadczenie było jak najpiękniejsze. Szczegóły w naszej </span><a href="/polityka-prywatnosci.html" id="cookie-privacy-link" data-i18n="cookie.link">polityce prywatności</a>.
+      </div>
+    </div>
+    <div class="cookie-actions">
+      <button class="cookie-accept" id="cookie-accept" data-i18n="cookie.accept">Akceptuję</button>
+      <button class="cookie-decline" id="cookie-decline" data-i18n="cookie.decline">Nie, dziękuję</button>
+    </div>
+  </div>
+
   <script>
     // ─── TRANSLATIONS ────────────────────────────────────────────────
     const translations = {
@@ -1187,6 +1259,11 @@
         'footer.col3.l4':      'Regulamin',
         'footer.col3.l5':      'Polityka prywatności',
         'footer.copy':         '© 2026 Bobogna Edu Art. Wszelkie prawa zastrzeżone.',
+        'cookie.title':        'Ciasteczka z duszą.',
+        'cookie.text':         'Używamy plików cookies, aby Twoje doświadczenie było jak najpiękniejsze. Szczegóły w naszej ',
+        'cookie.link':         'polityce prywatności',
+        'cookie.accept':       'Akceptuję',
+        'cookie.decline':      'Nie, dziękuję',
       },
       en: {
         'nav.collection':      'Collection',
@@ -1260,6 +1337,11 @@
         'footer.col3.l4':      'Terms',
         'footer.col3.l5':      'Privacy Policy',
         'footer.copy':         '© 2026 Bobogna Edu Art. All rights reserved.',
+        'cookie.title':        'Cookies with soul.',
+        'cookie.text':         'We use cookies to make your experience as beautiful as possible. See our ',
+        'cookie.link':         'privacy policy',
+        'cookie.accept':       'Accept',
+        'cookie.decline':      'No, thanks',
       },
       sv: {
         'nav.collection':      'Kollektion',
@@ -1333,6 +1415,11 @@
         'footer.col3.l4':      'Villkor',
         'footer.col3.l5':      'Integritetspolicy',
         'footer.copy':         '© 2026 Bobogna Edu Art. Alla rättigheter förbehållna.',
+        'cookie.title':        'Kakor med själ.',
+        'cookie.text':         'Vi använder cookies för att göra din upplevelse så vacker som möjligt. Se vår ',
+        'cookie.link':         'integritetspolicy',
+        'cookie.accept':       'Acceptera',
+        'cookie.decline':      'Nej tack',
       }
     };
 
@@ -1366,6 +1453,8 @@
       document.getElementById('terms-link').href = ispl ? '/regulamin.html' : issv ? '/villkor.html' : '/terms.html';
       document.getElementById('privacy-link').href = ispl ? '/polityka-prywatnosci.html' : issv ? '/integritetspolicy.html' : '/privacy-policy.html';
       document.getElementById('returns-link').href = ispl ? '/zwroty.html' : issv ? '/returer.html' : '/returns.html';
+      const cpLink = document.getElementById('cookie-privacy-link');
+      if (cpLink) cpLink.href = ispl ? '/polityka-prywatnosci.html' : issv ? '/integritetspolicy.html' : '/privacy-policy.html';
     }
 
     function setLang(lang) {
@@ -1450,6 +1539,26 @@
         document.querySelectorAll('.fade-up, .fade-in').forEach(el => el.classList.add('vis'));
       }, 600);
     });
+
+    // ─── COOKIE CONSENT ───────────────────────────────────────────────
+    (function() {
+      const banner = document.getElementById('cookie-banner');
+      const btnAccept = document.getElementById('cookie-accept');
+      const btnDecline = document.getElementById('cookie-decline');
+
+      function dismissBanner(choice) {
+        localStorage.setItem('cookie_consent', choice);
+        banner.classList.add('hiding');
+        setTimeout(() => { banner.style.display = 'none'; }, 420);
+      }
+
+      btnAccept.addEventListener('click', () => dismissBanner('accepted'));
+      btnDecline.addEventListener('click', () => dismissBanner('declined'));
+
+      if (!localStorage.getItem('cookie_consent')) {
+        setTimeout(() => { banner.classList.add('visible'); }, 1200);
+      }
+    })();
   </script>
 </body>
 </html>
