@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Polityka Prywatności — Bobogna Edu Art</title>
+  <link rel="icon" type="image/png" href="brand_assets/B_logo.png">
+  <link rel="apple-touch-icon" href="brand_assets/B_logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --cream: #F5F0E8; --navy: #1C2B4A; --navy-light: #253660;
+      --gold: #B8922A; --charcoal: #2D2D2D; --warm-white: #FAF8F4;
+    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Jost', sans-serif; background: var(--warm-white); color: var(--charcoal); overflow-x: hidden; }
+    body::after {
+      content: ''; position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+      pointer-events: none; z-index: 9999;
+    }
+    #nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 500;
+      padding: 28px 64px; display: flex; align-items: center; justify-content: space-between;
+      background: rgba(250,248,244,0.95); backdrop-filter: blur(14px);
+      box-shadow: 0 1px 0 rgba(44,44,44,0.07);
+    }
+    .nav-logo img { height: 26px; }
+    .nav-back {
+      font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--charcoal); text-decoration: none;
+      display: flex; align-items: center; gap: 10px;
+      transition: color 0.2s ease;
+    }
+    .nav-back:hover { color: var(--gold); }
+    .page-hero {
+      background: var(--cream); padding: 160px 80px 80px;
+      position: relative; overflow: hidden;
+    }
+    .page-hero::before {
+      content: 'P'; position: absolute; right: 60px; top: 60px;
+      font-family: 'Cormorant Garamond', serif; font-size: 28vw; line-height: 1;
+      color: rgba(184,146,42,0.04); pointer-events: none; user-select: none;
+    }
+    .page-hero-label { font-size: 9px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+    .page-hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 5vw, 6.5rem); font-weight: 300;
+      line-height: 0.9; letter-spacing: -0.025em; color: var(--navy); margin-bottom: 32px;
+    }
+    .page-hero-meta { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #aaa; }
+    .terms-wrap { max-width: 820px; margin: 0 auto; padding: 80px 80px 120px; }
+    .terms-intro {
+      font-size: 15px; font-weight: 300; line-height: 1.9; color: #6a6358;
+      margin-bottom: 64px; padding-bottom: 48px;
+      border-bottom: 1px solid rgba(44,44,44,0.08);
+    }
+    .terms-section { margin-bottom: 56px; }
+    .terms-section-num { font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+    .terms-section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.5rem, 2.5vw, 2.2rem); font-weight: 400;
+      color: var(--navy); margin-bottom: 24px; line-height: 1.1;
+    }
+    .terms-section p { font-size: 14px; font-weight: 300; line-height: 1.9; color: #6a6358; margin-bottom: 14px; }
+    .terms-section ul { list-style: none; margin-bottom: 14px; }
+    .terms-section ul li {
+      font-size: 14px; font-weight: 300; line-height: 1.9; color: #6a6358;
+      margin-bottom: 8px; padding-left: 20px; position: relative;
+    }
+    .terms-section ul li::before { content: '·'; position: absolute; left: 0; color: var(--gold); }
+    .terms-section a {
+      color: var(--navy); text-decoration: underline;
+      text-decoration-color: rgba(28,43,74,0.3); transition: color 0.2s ease;
+    }
+    .terms-section a:hover { color: var(--gold); }
+    .gold-rule { width: 36px; height: 1px; background: var(--gold); margin: 0 0 32px; }
+    footer {
+      background: #222220; padding: 40px 80px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .footer-copy { font-size: 10px; letter-spacing: 0.1em; color: rgba(245,240,232,0.2); }
+    .footer-back {
+      font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+      color: rgba(245,240,232,0.35); text-decoration: none; transition: color 0.2s ease;
+    }
+    .footer-back:hover { color: var(--gold); }
+    @media (max-width: 900px) {
+      #nav { padding: 22px 32px; }
+      .page-hero { padding: 130px 32px 60px; }
+      .terms-wrap { padding: 60px 32px 80px; }
+      footer { padding: 32px; flex-direction: column; gap: 14px; text-align: center; }
+    }
+    @media (max-width: 480px) {
+      #nav { padding: 20px 20px; }
+      .page-hero { padding: 110px 20px 52px; }
+      .terms-wrap { padding: 48px 20px 64px; }
+    }
+  </style>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
+</head>
+<body>
+
+  <nav id="nav">
+    <div class="nav-logo">
+      <a href="/"><img src="brand_assets/BOBOGNA_EDU_ART_black_a.png" alt="Bobogna Edu Art"></a>
+    </div>
+    <a href="/" class="nav-back">← Powrót do strony głównej</a>
+  </nav>
+
+  <div class="page-hero">
+    <div class="page-hero-label">Dokumenty prawne</div>
+    <h1 class="page-hero-title">Polityka<br>Prywatności</h1>
+    <p class="page-hero-meta">bobogna.pl</p>
+  </div>
+
+  <div class="terms-wrap">
+
+    <p class="terms-intro">
+      Niniejsza polityka prywatności opisuje zasady postępowania z danymi osobowymi oraz sposoby wykorzystywania plików cookies i innych technologii w ramach strony internetowej bobogna.pl.<br><br>
+      W sprawach związanych z ochroną danych osobowych możesz kontaktować się z nami pod adresem: <a href="mailto:kontakt@bobogna.pl">kontakt@bobogna.pl</a>.<br><br>
+      Podanie danych osobowych, a także zgoda na ich przetwarzanie, są całkowicie dobrowolne. Wszelkie przekazane nam dane osobowe są przetwarzane wyłącznie w zakresie i celu, na jaki wyraziłeś zgodę.
+    </p>
+
+    <div class="terms-section">
+      <div class="terms-section-num">01</div>
+      <h2>RODO i Administrator danych</h2>
+      <div class="gold-rule"></div>
+      <p>Od 25 maja 2018 roku obowiązuje Rozporządzenie Parlamentu Europejskiego i Rady (UE) 2016/679 (RODO), które wprowadza nowe zagadnienia z zakresu praw Klientów.</p>
+      <p>Administratorem danych osobowych bobogna.pl jest:<br>
+        <strong>Agnieszka Litworowska</strong><br>
+        Winiary 280, 32-420 gm. Gdów<br>
+        NIP: 5732619322
+      </p>
+      <p>Przysługują Ci następujące uprawnienia w związku z przetwarzaniem Twoich danych:</p>
+      <ul>
+        <li>prawo do żądania dostępu do swoich danych osobowych, ich sprostowania, usunięcia lub ograniczenia przetwarzania</li>
+        <li>prawo do wniesienia sprzeciwu wobec przetwarzania</li>
+        <li>prawo do przenoszenia danych</li>
+        <li>prawo do cofnięcia zgody na przetwarzanie danych osobowych w określonym celu</li>
+        <li>prawo do wniesienia skargi do organu nadzorczego</li>
+      </ul>
+      <p>Uprawnienia możesz realizować zgodnie z art. 16–21 RODO, kontaktując się pod adresem: <a href="mailto:kontakt@bobogna.pl">kontakt@bobogna.pl</a>.</p>
+    </div>
+
+    <div class="terms-section">
+      <div class="terms-section-num">02</div>
+      <h2>Cel i podstawa prawna przetwarzania danych</h2>
+      <div class="gold-rule"></div>
+      <p>Przetwarzamy Twoje dane osobowe w szczególności w celu:</p>
+      <ul>
+        <li>rejestracji konta i obsługi transakcji w serwisie bobogna.pl</li>
+        <li>obsługi zapytań i zgłoszeń kierowanych do nas</li>
+        <li>kontaktu w celach związanych ze świadczeniem usług</li>
+        <li>przetwarzania danych dla celów podatkowych i rachunkowych</li>
+        <li>zapewnienia obsługi usług płatniczych</li>
+      </ul>
+      <p>Na podstawie Twojej zgody przetwarzamy dane w celu: zapisywania plików cookies, organizacji akcji promocyjnych i konkursów, wysyłania newsletterów.</p>
+      <p>W każdej chwili możesz wycofać zgodę na przetwarzanie danych, wysyłając e-mail na adres: <a href="mailto:kontakt@bobogna.pl">kontakt@bobogna.pl</a>.</p>
+    </div>
+
+    <div class="terms-section">
+      <div class="terms-section-num">03</div>
+      <h2>Odbiorcy danych osobowych</h2>
+      <div class="gold-rule"></div>
+      <p>Twoje dane mogą być przetwarzane przez następujące podmioty:</p>
+      <ul>
+        <li><strong>home.pl Sp. z o.o.</strong> – przechowywanie danych na serwerze</li>
+        <li><strong>Rocket Science Group (MailChimp)</strong> – system mailingowy do przesyłania newslettera</li>
+        <li><strong>Google LLC</strong> – zewnętrzny serwer pocztowy G Suite</li>
+        <li><strong>Tpay – Krajowy Integrator Płatności S.A.</strong> – obsługa płatności</li>
+        <li>biura rachunkowe świadczące usługi finansowo-księgowe</li>
+        <li>podmioty świadczące usługi IT oraz dostarczające oprogramowanie informatyczne</li>
+      </ul>
+      <p>Twoje dane osobowe możemy przekazać organom publicznym walczącym z oszustwami i nadużyciami.</p>
+    </div>
+
+    <div class="terms-section">
+      <div class="terms-section-num">04</div>
+      <h2>Jak długo przechowujemy Twoje dane?</h2>
+      <div class="gold-rule"></div>
+      <p>Przechowujemy Twoje dane osobowe przez czas obowiązywania umowy zawartej z Tobą, jak i po jej zakończeniu:</p>
+      <ul>
+        <li>w celu wypełnienia obowiązków wynikających z przepisów prawa podatkowego i rachunkowego</li>
+        <li>w celach statystycznych i archiwizacyjnych</li>
+        <li>przez okres maksymalnie 10 lat od dnia zakończenia wykonania umowy</li>
+        <li>faktury z Twoimi danymi przechowywane są przez 5 lat od końca roku podatkowego, w którym powstał obowiązek podatkowy</li>
+      </ul>
+    </div>
+
+    <div class="terms-section">
+      <div class="terms-section-num">05</div>
+      <h2>Przekazywanie danych poza EOG</h2>
+      <div class="gold-rule"></div>
+      <p>Z uwagi na korzystanie z usług Google oraz Facebooka, Twoje dane mogą być przekazywane do Stanów Zjednoczonych Ameryki (USA) oraz Kanady. Podmioty te gwarantują odpowiedni poziom ochrony danych osobowych wymagany przez przepisy europejskie.</p>
+      <p>Twoje dane osobowe nie są przetwarzane automatycznie (w tym poprzez profilowanie) w sposób wpływający na Twoje prawa.</p>
+    </div>
+
+    <div class="terms-section">
+      <div class="terms-section-num">06</div>
+      <h2>Konto użytkownika</h2>
+      <div class="gold-rule"></div>
+      <p>Aby założyć konto musisz podać: adres e-mail, imię i nazwisko, adres, numer telefonu. Dane przetwarzane są na podstawie umowy o świadczenie usług drogą elektroniczną (art. 6 ust. 1 lit. b RODO) przez czas funkcjonowania konta.</p>
+      <p>W każdym momencie możesz zmienić, sprostować lub usunąć dane zawarte w koncie. Przysługuje Ci prawo do przenoszenia danych, o którym mowa w art. 20 RODO.</p>
+    </div>
+
+    <div class="terms-section">
+      <div class="terms-section-num">07</div>
+      <h2>Newsletter</h2>
+      <div class="gold-rule"></div>
+      <p>Zapisując się do newslettera przekazujesz nam adres e-mail. Podstawą prawną przetwarzania jest Twoja zgoda wyrażona poprzez zaznaczenie stosownej zgody przy zapisywaniu się.</p>
+      <p>W każdej chwili możesz zrezygnować z newslettera, co spowoduje usunięcie Twoich danych z bazy. Przysługuje Ci prawo do przenoszenia danych (art. 20 RODO).</p>
+    </div>
+
+    <div class="terms-section">
+      <div class="terms-section-num">08</div>
+      <h2>Zamówienia i faktury</h2>
+      <div class="gold-rule"></div>
+      <p>Aby złożyć zamówienie musisz podać: imię i nazwisko, adres rozliczeniowy, adres e-mail, numer telefonu. Dane przetwarzane są w celu realizacji zamówienia (art. 6 ust. 1 lit. b RODO), wystawienia faktury (art. 6 ust. 1 lit. c RODO) oraz w celach archiwalnych i statystycznych (art. 6 ust. 1 lit. f RODO).</p>
+      <p>Dane o zamówieniach przetwarzane są przez czas niezbędny do realizacji zamówienia, a następnie do czasu upływu terminu przedawnienia roszczeń z tytułu zawartej umowy.</p>
+    </div>
+
+    <div class="terms-section">
+      <div class="terms-section-num">09</div>
+      <h2>Reklamacje i odstąpienie od umowy</h2>
+      <div class="gold-rule"></div>
+      <p>Dane przekazane w związku ze złożeniem reklamacji lub odstąpieniem od umowy (imię i nazwisko, adres, numer telefonu, adres e-mail, numer rachunku bankowego) wykorzystywane są wyłącznie w celu realizacji procedury reklamacyjnej lub odstąpienia (art. 6 ust. 1 lit. c RODO).</p>
+      <p>Zgodnie z art. 38 ustawy o prawach konsumenta, prawo odstąpienia od umowy nie przysługuje w odniesieniu do treści cyfrowych (pliki .pdf), które zostały już pobrane przez konsumenta.</p>
+    </div>
+
+    <div class="terms-section">
+      <div class="terms-section-num">10</div>
+      <h2>Pliki cookies</h2>
+      <div class="gold-rule"></div>
+      <p>Portal bobogna.pl korzysta z technologii plików cookies. Z plików cookies korzystamy na podstawie Twojej zgody, za wyjątkiem sytuacji, gdy są niezbędne do prawidłowego świadczenia usługi drogą elektroniczną.</p>
+      <p>Cookies to niewielkie pliki tekstowe zapisywane na Twoim urządzeniu. Nie pozwalają na pobieranie danych osobowych ani informacji poufnych.</p>
+      <p>W serwisie funkcjonują następujące pliki cookies podmiotów trzecich:</p>
+      <ul>
+        <li><strong>Google Analytics</strong> – tworzenie statystyk i analiza w celu optymalizacji serwisu</li>
+        <li><strong>Google AdWords / AdSense</strong> – wyświetlanie spersonalizowanych reklam</li>
+        <li><strong>Facebook Pixel</strong> – kierowanie spersonalizowanych reklam</li>
+        <li><strong>Facebook, Instagram, Google, Pinterest, Youtube</strong> – narzędzia społecznościowe</li>
+      </ul>
+      <p>Polityki prywatności podmiotów trzecich: <a href="https://www.facebook.com/legal/FB_Work_Privacy" target="_blank">Facebook</a>, <a href="https://policies.google.com/privacy?hl=pl" target="_blank">Google</a>, <a href="https://policy.pinterest.com/en/privacy-policy" target="_blank">Pinterest</a>, <a href="https://www.youtube.com/static?gl=PL&template=terms" target="_blank">YouTube</a>.</p>
+    </div>
+
+    <div class="terms-section">
+      <div class="terms-section-num">11</div>
+      <h2>Logi serwera</h2>
+      <div class="gold-rule"></div>
+      <p>Korzystanie z naszej strony wiąże się z przesyłaniem zapytań do serwera. Każde zapytanie zapisywane jest w logach serwera i obejmuje m.in.: adres IP, datę i czas, informacje o przeglądarce i systemie operacyjnym.</p>
+      <p>Dane zapisane w logach serwera nie są kojarzone z konkretnymi osobami korzystającymi ze strony i nie są wykorzystywane w celu identyfikacji użytkownika. Stanowią wyłącznie materiał pomocniczy do administrowania stroną.</p>
+    </div>
+
+    <div class="terms-section">
+      <div class="terms-section-num">12</div>
+      <h2>Postanowienia końcowe</h2>
+      <div class="gold-rule"></div>
+      <p>Zastrzegamy sobie prawo do zmiany zasad prowadzonej polityki prywatności. O zmianach użytkownicy będą informowani z co najmniej 7-dniowym wyprzedzeniem. Każda nowa wersja będzie upubliczniana z nową datą.</p>
+      <p>W razie jakichkolwiek wątpliwości, prosimy o kontakt: <a href="mailto:kontakt@bobogna.pl">kontakt@bobogna.pl</a>.</p>
+    </div>
+
+  </div>
+
+  <footer>
+    <p class="footer-copy">© 2026 Bobogna Edu Art. Wszelkie prawa zastrzeżone.</p>
+    <a href="/" class="footer-back">← Powrót do strony głównej</a>
+  </footer>
+
+</body>
+</html>

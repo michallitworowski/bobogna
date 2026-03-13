@@ -1035,6 +1035,7 @@
             <li><a href="#" data-i18n="footer.col3.l2">Zwroty</a></li>
             <li><a href="#" data-i18n="footer.col3.l3">FAQ</a></li>
             <li><a href="/regulamin.html" id="terms-link" data-i18n="footer.col3.l4">Regulamin</a></li>
+            <li><a href="/polityka-prywatnosci.html" id="privacy-link" data-i18n="footer.col3.l5">Polityka prywatności</a></li>
           </ul>
         </div>
       </div>
@@ -1127,6 +1128,7 @@
         'footer.col3.l2':      'Zwroty',
         'footer.col3.l3':      'FAQ',
         'footer.col3.l4':      'Regulamin',
+        'footer.col3.l5':      'Polityka prywatności',
         'footer.copy':         '© 2026 Bobogna Edu Art. Wszelkie prawa zastrzeżone.',
       },
       en: {
@@ -1199,6 +1201,7 @@
         'footer.col3.l2':      'Returns',
         'footer.col3.l3':      'FAQ',
         'footer.col3.l4':      'Terms',
+        'footer.col3.l5':      'Privacy Policy',
         'footer.copy':         '© 2026 Bobogna Edu Art. All rights reserved.',
       }
     };
@@ -1228,6 +1231,7 @@
       document.getElementById('btn-pl-mob').classList.toggle('active', ispl);
       document.getElementById('btn-en-mob').classList.toggle('active', !ispl);
       document.getElementById('terms-link').href = ispl ? '/regulamin.html' : '/terms.html';
+      document.getElementById('privacy-link').href = ispl ? '/polityka-prywatnosci.html' : '/privacy-policy.html';
     }
 
     function setLang(lang) {
