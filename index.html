@@ -678,6 +678,14 @@
       font-size: 10px; letter-spacing: 0.1em;
       color: rgba(245,240,232,0.2);
     }
+    #cookie-prefs-btn {
+      font-family: 'Jost', sans-serif;
+      font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+      background: none; border: none; cursor: pointer;
+      color: rgba(245,240,232,0.22); padding: 0;
+      transition: color 0.2s ease;
+    }
+    #cookie-prefs-btn:hover { color: rgba(245,240,232,0.55); }
     .footer-ig {
       display: flex; align-items: center; gap: 12px;
       font-size: 10px; letter-spacing: 0.16em;
@@ -1157,6 +1165,7 @@
     </div>
     <div class="footer-bottom">
       <p class="footer-copy" data-i18n="footer.copy">© 2026 Bobogna Edu Art. Wszelkie prawa zastrzeżone.</p>
+      <button id="cookie-prefs-btn" onclick="reopenCookieBanner()" data-i18n="cookie.prefs">Preferencje cookies</button>
       <a href="https://instagram.com/bobogna_edu_art" class="footer-ig">
         <div class="ig-icon">
           <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
@@ -1264,6 +1273,7 @@
         'cookie.link':         'polityce prywatności',
         'cookie.accept':       'Akceptuję',
         'cookie.decline':      'Nie, dziękuję',
+        'cookie.prefs':        'Preferencje cookies',
       },
       en: {
         'nav.collection':      'Collection',
@@ -1342,6 +1352,7 @@
         'cookie.link':         'privacy policy',
         'cookie.accept':       'Accept',
         'cookie.decline':      'No, thanks',
+        'cookie.prefs':        'Cookie preferences',
       },
       sv: {
         'nav.collection':      'Kollektion',
@@ -1420,6 +1431,7 @@
         'cookie.link':         'integritetspolicy',
         'cookie.accept':       'Acceptera',
         'cookie.decline':      'Nej tack',
+        'cookie.prefs':        'Cookie-inställningar',
       }
     };
 
@@ -1559,6 +1571,14 @@
         setTimeout(() => { banner.classList.add('visible'); }, 1200);
       }
     })();
+
+    function reopenCookieBanner() {
+      const banner = document.getElementById('cookie-banner');
+      localStorage.removeItem('cookie_consent');
+      banner.style.display = '';
+      banner.classList.remove('hiding');
+      requestAnimationFrame(() => { banner.classList.add('visible'); });
+    }
   </script>
 </body>
 </html>
