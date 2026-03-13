@@ -193,7 +193,17 @@
       background: var(--navy);
       padding: 100px 80px;
       text-align: center;
+      position: relative;
+      overflow: hidden;
     }
+    .quote-band-bg {
+      position: absolute; inset: 0; z-index: 0;
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center 20%;
+      opacity: 0.14;
+      filter: grayscale(40%);
+    }
+    .quote-band > *:not(.quote-band-bg) { position: relative; z-index: 1; }
     .quote-mark {
       font-family: 'Cormorant Garamond', serif;
       font-size: 6rem; line-height: 0.5;
@@ -212,21 +222,6 @@
     .quote-attr {
       font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
       color: rgba(245,240,232,0.3);
-    }
-
-    /* ─── VIDEO ─── */
-    .video-section {
-      position: relative; height: 520px; overflow: hidden;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .video-section video {
-      position: absolute; inset: 0;
-      width: 100%; height: 100%;
-      object-fit: cover;
-    }
-    .video-overlay {
-      position: absolute; inset: 0;
-      background: rgba(28,43,74,0.55);
     }
     .video-caption {
       position: relative; z-index: 2;
@@ -449,24 +444,12 @@
 
   <!-- CYTAT -->
   <section class="quote-band">
+    <img src="brand_assets/Portret.png" alt="" class="quote-band-bg" aria-hidden="true">
     <div class="quote-mark">"</div>
     <p class="quote-text fade-up">
       Piękno powinno być <em>używane</em>, nie chowane.
     </p>
     <p class="quote-attr fade-up d1">Agnieszka Litworowska · Bobogna Edu Art</p>
-  </section>
-
-  <!-- VIDEO -->
-  <section class="video-section">
-    <video autoplay muted loop playsinline>
-      <source src="brand_assets/IMG_0467.MOV" type="video/mp4">
-      <source src="brand_assets/IMG_0467.MOV" type="video/quicktime">
-    </video>
-    <div class="video-overlay"></div>
-    <div class="video-caption">
-      <div class="video-caption-label">Rzemiosło</div>
-      <p class="video-caption-text">Każde etui uszyte ręcznie,<br>jedno po drugim.</p>
-    </div>
   </section>
 
   <!-- PROCES -->
