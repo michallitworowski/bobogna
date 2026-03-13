@@ -642,6 +642,80 @@
       background: rgba(245,240,232,0.07);
     }
 
+    /* ─── NEWSLETTER ─── */
+    .newsletter-section {
+      background: var(--cream);
+      padding: 120px 80px;
+      text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .newsletter-section::before {
+      content: '✦';
+      position: absolute; top: 32px; left: 50%; transform: translateX(-50%);
+      font-size: 11px; letter-spacing: 0.4em;
+      color: rgba(184,146,42,0.25);
+    }
+    .newsletter-inner {
+      max-width: 600px; margin: 0 auto;
+    }
+    .newsletter-gift {
+      font-size: 12px; letter-spacing: 0.08em;
+      color: var(--gold); margin-bottom: 28px;
+      font-family: 'Jost', sans-serif;
+    }
+    .newsletter-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      font-weight: 300; line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--navy); margin-bottom: 16px;
+    }
+    .newsletter-title em {
+      font-style: italic; color: var(--charcoal);
+    }
+    .newsletter-sub {
+      font-family: 'Jost', sans-serif; font-weight: 300;
+      font-size: 0.92rem; line-height: 1.7;
+      color: var(--charcoal); opacity: 0.75;
+      margin-bottom: 40px;
+    }
+    .newsletter-form {
+      display: flex; gap: 0;
+      border: 1px solid rgba(28,43,74,0.18);
+      border-radius: 2px; overflow: hidden;
+      box-shadow: 0 4px 24px rgba(28,43,74,0.06);
+      background: #fff;
+    }
+    .newsletter-input {
+      flex: 1; padding: 16px 22px;
+      font-family: 'Jost', sans-serif; font-weight: 300;
+      font-size: 0.92rem; color: var(--navy);
+      border: none; outline: none; background: transparent;
+    }
+    .newsletter-input::placeholder { color: rgba(28,43,74,0.35); }
+    .newsletter-btn {
+      padding: 16px 28px;
+      background: var(--navy); color: var(--cream);
+      font-family: 'Jost', sans-serif; font-size: 10px;
+      font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase;
+      border: none; cursor: pointer;
+      transition: background 0.25s ease, opacity 0.25s ease;
+      white-space: nowrap;
+    }
+    .newsletter-btn:hover { background: var(--charcoal); }
+    .newsletter-btn:disabled { opacity: 0.5; cursor: default; }
+    .newsletter-success {
+      display: none; margin-top: 20px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem; font-style: italic;
+      color: var(--navy); opacity: 0.8;
+    }
+    .newsletter-privacy {
+      margin-top: 14px;
+      font-size: 10px; letter-spacing: 0.08em;
+      color: rgba(28,43,74,0.35);
+    }
+
     /* ─── FOOTER ─── */
     footer {
       background: #222220;
@@ -788,6 +862,10 @@
       }
       .cta-btns { width: 100%; }
       .btn-gold, .btn-outline-cream { padding: 18px 32px; text-align: center; }
+
+      .newsletter-section { padding: 80px 32px; }
+      .newsletter-form { flex-direction: column; border-radius: 2px; }
+      .newsletter-btn { padding: 16px; }
 
       footer { padding: 52px 32px 32px; }
       .footer-top { flex-direction: column; gap: 48px; }
@@ -1123,6 +1201,29 @@
       <a href="https://bobogna.pl" class="btn-gold" data-i18n="cta.shop">Sklep online</a>
       <a href="https://twojepióro.pl" class="btn-gold" data-i18n="cta.shop2">TwojePióro.pl</a>
       <a href="https://instagram.com/bobogna_edu_art" class="btn-outline-cream">@bobogna_edu_art</a>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter-section">
+    <div class="newsletter-inner fade-up">
+      <div class="newsletter-gift" data-i18n-html="email.gift">🎁 &nbsp; Gratis: Protokół Bobogna</div>
+      <h2 class="newsletter-title" data-i18n-html="email.title">Twój rytuał<br><em>czeka na Ciebie</em></h2>
+      <p class="newsletter-sub" data-i18n="email.sub">Zapisz się i jako pierwsza dowiesz się o nowych kolekcjach.</p>
+      <!-- Mailchimp Form — user_id: 806cd398fc3fc7db6e76dc57d -->
+      <form class="newsletter-form" id="mc-form" novalidate>
+        <input type="hidden" name="u" value="806cd398fc3fc7db6e76dc57d">
+        <input type="hidden" name="id" value="8557da1b629d91f29524642c6">
+        <input
+          class="newsletter-input" id="mc-email"
+          type="email" name="EMAIL" autocomplete="email"
+          data-i18n-placeholder="email.placeholder"
+          placeholder="Twój adres e-mail"
+          required>
+        <button class="newsletter-btn" type="submit" id="mc-btn" data-i18n="email.cta">Zapisz się</button>
+      </form>
+      <p class="newsletter-success" id="mc-success" data-i18n="email.success">Dziękujemy! ✦</p>
+      <p class="newsletter-privacy" data-i18n="email.privacy">Bez spamu. Możesz zrezygnować w każdej chwili.</p>
     </div>
   </section>
 
@@ -1582,6 +1683,55 @@
       banner.classList.remove('hiding');
       requestAnimationFrame(() => { banner.classList.add('visible'); });
     }
+
+    // ─── MAILCHIMP NEWSLETTER ─────────────────────────────────────────
+    (function() {
+      const form   = document.getElementById('mc-form');
+      const emailI = document.getElementById('mc-email');
+      const btn    = document.getElementById('mc-btn');
+      const succ   = document.getElementById('mc-success');
+      if (!form) return;
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        if (!emailI.value || !emailI.validity.valid) {
+          emailI.focus(); return;
+        }
+        btn.disabled = true;
+
+        const u   = form.querySelector('[name=u]').value;
+        const id  = form.querySelector('[name=id]').value;
+        const url = 'https://bobogna.us14.list-manage.com/subscribe/post-json'
+                  + '?u=' + u + '&id=' + id
+                  + '&EMAIL=' + encodeURIComponent(emailI.value)
+                  + '&c=__mc_cb__';
+
+        window.__mc_cb__ = function(data) {
+          delete window.__mc_cb__;
+          if (data.result === 'success') {
+            form.style.display = 'none';
+            succ.style.display = 'block';
+          } else {
+            btn.disabled = false;
+            // strip Mailchimp HTML tags from error message
+            const msg = (data.msg || '').replace(/<[^>]+>/g, '');
+            alert(msg || 'Błąd — spróbuj ponownie.');
+          }
+        };
+
+        const s = document.createElement('script');
+        s.src = url;
+        s.onerror = function() {
+          btn.disabled = false;
+          delete window.__mc_cb__;
+        };
+        document.head.appendChild(s);
+        setTimeout(() => { s.remove(); }, 8000);
+      });
+    })();
   </script>
+
+  <!-- Mailchimp Connected Site (popup/analytics) -->
+  <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/806cd398fc3fc7db6e76dc57d/8557da1b629d91f29524642c6.js");</script>
 </body>
 </html>
