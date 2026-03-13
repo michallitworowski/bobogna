@@ -13,6 +13,35 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://bobogna.pl/"/>
   </url>
 
+  <!-- About Us -->
+  <url>
+    <loc>https://bobogna.pl/o-nas.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://bobogna.pl/o-nas.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bobogna.pl/about.html"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://bobogna.pl/om-oss.html"/>
+  </url>
+  <url>
+    <loc>https://bobogna.pl/about.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://bobogna.pl/o-nas.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bobogna.pl/about.html"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://bobogna.pl/om-oss.html"/>
+  </url>
+  <url>
+    <loc>https://bobogna.pl/om-oss.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://bobogna.pl/o-nas.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bobogna.pl/about.html"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://bobogna.pl/om-oss.html"/>
+  </url>
+
   <!-- Terms & Conditions -->
   <url>
     <loc>https://bobogna.pl/regulamin.html</loc>
