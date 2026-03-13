@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms & Conditions — Bobogna Edu Art</title>
+  <link rel="icon" type="image/png" href="brand_assets/B_logo.png">
+  <link rel="apple-touch-icon" href="brand_assets/B_logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --cream: #F5F0E8;
+      --navy: #1C2B4A;
+      --navy-light: #253660;
+      --gold: #B8922A;
+      --charcoal: #2D2D2D;
+      --warm-white: #FAF8F4;
+      --dust: #EDE6DA;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background: var(--warm-white);
+      color: var(--charcoal);
+      overflow-x: hidden;
+    }
+
+    body::after {
+      content: '';
+      position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+      pointer-events: none; z-index: 9999;
+    }
+
+    /* ─── NAV ─── */
+    #nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 500;
+      padding: 28px 64px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(250,248,244,0.95);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 1px 0 rgba(44,44,44,0.07);
+    }
+    .nav-logo img { height: 26px; }
+    .nav-back {
+      font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--charcoal); text-decoration: none;
+      display: flex; align-items: center; gap: 10px;
+      transition: color 0.2s ease;
+    }
+    .nav-back:hover { color: var(--gold); }
+
+    /* ─── HERO ─── */
+    .page-hero {
+      background: var(--cream);
+      padding: 160px 80px 80px;
+      position: relative; overflow: hidden;
+    }
+    .page-hero::before {
+      content: 'T';
+      position: absolute; right: 60px; top: 60px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28vw; line-height: 1;
+      color: rgba(184,146,42,0.04);
+      pointer-events: none; user-select: none;
+    }
+    .page-hero-label {
+      font-size: 9px; letter-spacing: 0.32em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 20px;
+    }
+    .page-hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 5vw, 6.5rem);
+      font-weight: 300; line-height: 0.9;
+      letter-spacing: -0.025em; color: var(--navy);
+      margin-bottom: 32px;
+    }
+    .page-hero-meta {
+      font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+      color: #aaa;
+    }
+
+    /* ─── CONTENT ─── */
+    .terms-wrap {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 80px 80px 120px;
+    }
+
+    .terms-intro {
+      font-size: 15px; font-weight: 300; line-height: 1.9;
+      color: #6a6358; margin-bottom: 64px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(44,44,44,0.08);
+    }
+
+    .terms-section { margin-bottom: 56px; }
+
+    .terms-section-num {
+      font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 10px;
+    }
+
+    .terms-section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+      font-weight: 400; color: var(--navy);
+      margin-bottom: 24px; line-height: 1.1;
+    }
+
+    .terms-section p {
+      font-size: 14px; font-weight: 300; line-height: 1.9;
+      color: #6a6358; margin-bottom: 14px;
+    }
+
+    .terms-section ol {
+      list-style: none; counter-reset: terms-counter;
+      margin-bottom: 14px;
+    }
+    .terms-section ol li {
+      counter-increment: terms-counter;
+      font-size: 14px; font-weight: 300; line-height: 1.9;
+      color: #6a6358; margin-bottom: 10px;
+      padding-left: 28px; position: relative;
+    }
+    .terms-section ol li::before {
+      content: counter(terms-counter) ".";
+      position: absolute; left: 0;
+      color: var(--gold); font-size: 11px;
+      letter-spacing: 0.05em; top: 3px;
+    }
+
+    .terms-section ul { list-style: none; margin-bottom: 14px; }
+    .terms-section ul li {
+      font-size: 14px; font-weight: 300; line-height: 1.9;
+      color: #6a6358; margin-bottom: 8px;
+      padding-left: 20px; position: relative;
+    }
+    .terms-section ul li::before {
+      content: '·'; position: absolute; left: 0; color: var(--gold);
+    }
+
+    .terms-section a {
+      color: var(--navy); text-decoration: underline;
+      text-decoration-color: rgba(28,43,74,0.3);
+      transition: color 0.2s ease;
+    }
+    .terms-section a:hover { color: var(--gold); }
+
+    .gold-rule {
+      width: 36px; height: 1px;
+      background: var(--gold); margin: 0 0 32px;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #222220;
+      padding: 40px 80px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .footer-copy {
+      font-size: 10px; letter-spacing: 0.1em;
+      color: rgba(245,240,232,0.2);
+    }
+    .footer-back {
+      font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+      color: rgba(245,240,232,0.35); text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .footer-back:hover { color: var(--gold); }
+
+    @media (max-width: 900px) {
+      #nav { padding: 22px 32px; }
+      .page-hero { padding: 130px 32px 60px; }
+      .terms-wrap { padding: 60px 32px 80px; }
+      footer { padding: 32px; flex-direction: column; gap: 14px; text-align: center; }
+    }
+    @media (max-width: 480px) {
+      #nav { padding: 20px 20px; }
+      .page-hero { padding: 110px 20px 52px; }
+      .terms-wrap { padding: 48px 20px 64px; }
+    }
+  </style>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
+</head>
+<body>
+
+  <nav id="nav">
+    <div class="nav-logo">
+      <a href="/"><img src="brand_assets/BOBOGNA_EDU_ART_black_a.png" alt="Bobogna Edu Art"></a>
+    </div>
+    <a href="/" class="nav-back">← Back to homepage</a>
+  </nav>
+
+  <div class="page-hero">
+    <div class="page-hero-label">Legal documents</div>
+    <h1 class="page-hero-title">Terms &amp;<br>Conditions</h1>
+    <p class="page-hero-meta">Effective as of 31 January 2026</p>
+  </div>
+
+  <div class="terms-wrap">
+
+    <p class="terms-intro">
+      These Terms and Conditions contain information on how to place an Order and conclude a Sales Agreement, available payment methods, shipping rules, complaint procedures, and the provision of electronic services.<br><br>
+      For any questions, please write to: <a href="mailto:kontakt@bobogna.pl">kontakt@bobogna.pl</a>.
+    </p>
+
+    <div class="terms-section">
+      <div class="terms-section-num">§ 1</div>
+      <h2>Definitions</h2>
+      <div class="gold-rule"></div>
+      <p>For the purposes of these Terms and Conditions, the following definitions apply:</p>
+      <ul>
+        <li><strong>Seller</strong> – Agnieszka Litworowska, Winiary 280, 32-420 gm Gdów, Poland, Tax ID (NIP): 5732619322</li>
+        <li><strong>Buyer</strong> – an entity with full legal capacity who places an Order in the Store under the conditions set out in these Terms and Conditions</li>
+        <li><strong>Store</strong> – the online store available at <a href="https://bobogna.pl/sklep">https://bobogna.pl/sklep</a></li>
+        <li><strong>Product</strong> – a good available in the Store that may be the subject of a Sales Agreement; essential characteristics and the gross price of each Product are published on its dedicated Store page</li>
+        <li><strong>Consumer</strong> – a Buyer who is a natural person concluding an agreement with the Seller unrelated directly to their business or professional activity</li>
+        <li><strong>Privileged Entrepreneur</strong> – a Buyer who is a natural person concluding an agreement directly related to their business activity, where the agreement is not of a professional nature</li>
+        <li><strong>Service</strong> – the group of interconnected websites operated by the Seller at <a href="https://bobogna.pl">https://bobogna.pl</a></li>
+        <li><strong>User</strong> – a user of the Service who utilises its functionality</li>
+        <li><strong>Terms and Conditions</strong> – this document, available at <a href="https://bobogna.pl/regulamin">https://bobogna.pl/regulamin</a></li>
+        <li><strong>Order</strong> – the Buyer's declaration of intent constituting an offer to conclude a Sales Agreement, made using the shopping cart function</li>
+        <li><strong>Sales Agreement</strong> – a contract of sale concluded between the Seller and the Buyer via the Store's sales system</li>
+      </ul>
+    </div>
+
+    <div class="terms-section">
+      <div class="terms-section-num">§ 2</div>
+      <h2>Introduction</h2>
+      <div class="gold-rule"></div>
+      <ol>
+        <li>These Terms and Conditions govern the sale of Products by the Seller through the Store and set out the mutual rights and obligations of the parties.</li>
+        <li>Placing an Order in the Store requires the Buyer to read and accept these Terms and Conditions during the order process.</li>
+        <li>Placing an Order constitutes confirmation that the Buyer has read and accepted these Terms and Conditions.</li>
+        <li>The Seller can be contacted by email at <a href="mailto:kontakt@bobogna.pl">kontakt@bobogna.pl</a> or via the contact form at <a href="https://bobogna.pl/kontakt">https://bobogna.pl/kontakt</a>.</li>
+        <li>Minimum technical requirements to use the Store: standard operating system, standard web browser, standard PDF reader, and an active email address provided correctly in the Order form.</li>
+        <li>The information contained in the Store does not constitute an offer within the meaning of the Civil Code; it is an invitation to submit offers by the Buyer.</li>
+      </ol>
+    </div>
+
+    <div class="terms-section">
+      <div class="terms-section-num">§ 3</div>
+      <h2>Orders and Sales Agreement</h2>
+      <div class="gold-rule"></div>
+      <ol>
+        <li>Orders may be placed 24 hours a day, 7 days a week, throughout the year, except during scheduled maintenance periods announced on the Service.</li>
+        <li>Orders may be placed with or without registering an account in the Store.</li>
+        <li>To place an Order, the Buyer must: select the Product(s), add them to the cart, choose a delivery method, complete the Order form, accept these Terms and Conditions, select a payment method, and click "Buy and Pay".</li>
+        <li>The Sales Agreement is concluded when the Buyer receives an email confirming the Order details and acceptance for fulfilment by the Seller.</li>
+        <li>Payment must be made within 48 hours of receiving the Order confirmation. If payment is not received within this period, the Order will be cancelled.</li>
+        <li>An electronic invoice will be sent to the Buyer's email address if the Buyer provides the necessary invoicing details.</li>
+      </ol>
+    </div>
+
+    <div class="terms-section">
+      <div class="terms-section-num">§ 4</div>
+      <h2>Payments</h2>
+      <div class="gold-rule"></div>
+      <ol>
+        <li>Payments can be made by bank transfer to the Seller's account, via the TPay payment system, or by Visa or MasterCard.</li>
+        <li>Delivery costs depend on the chosen delivery method:
+          <ul>
+            <li>Digital file (PDF) download – free of charge</li>
+            <li>InPost Parcel Locker (size A) – PLN 14, (size B) – PLN 15.49, (size C) – PLN 17.49</li>
+            <li>InPost Courier – PLN 16.99</li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+
+    <div class="terms-section">
+      <div class="terms-section-num">§ 5</div>
+      <h2>Delivery</h2>
+      <div class="gold-rule"></div>
+      <ol>
+        <li>The Seller delivers ordered Products in the manner selected by the Buyer in the Order form.</li>
+        <li>Available delivery options:
+          <ul>
+            <li>Digital delivery – a download link is sent to the Buyer's email address after payment; the file can be downloaded an unlimited number of times with no time restriction</li>
+            <li>Polish Post – estimated delivery within approx. 3 business days (registered mail) or approx. 10 business days (priority letter)</li>
+            <li>InPost Parcel Lockers or InPost Courier</li>
+          </ul>
+        </li>
+        <li>The Seller notifies the Buyer by email when the Products have been dispatched.</li>
+      </ol>
+    </div>
+
+    <div class="terms-section">
+      <div class="terms-section-num">§ 6</div>
+      <h2>Right of Withdrawal</h2>
+      <div class="gold-rule"></div>
+      <ol>
+        <li>A Consumer who has concluded a distance Sales Agreement has the right to withdraw from it without giving any reason within 14 days of taking possession of the goods, by sending a declaration to the Seller's email address.</li>
+        <li>In the event of withdrawal, the Seller will refund all payments received from the Consumer no later than 14 days from the date on which the Seller was informed of the exercise of the right of withdrawal.</li>
+        <li>The Consumer bears the direct costs of returning the Product to the Seller.</li>
+        <li>The right of withdrawal does not apply to the purchase of digital Products (PDF files) that have already been downloaded by the Consumer.</li>
+        <li>The provisions of this section also apply to Privileged Entrepreneurs.</li>
+      </ol>
+    </div>
+
+    <div class="terms-section">
+      <div class="terms-section-num">§ 7</div>
+      <h2>Complaints</h2>
+      <div class="gold-rule"></div>
+      <ol>
+        <li>The Seller is obliged to deliver a Product free of defects to the Consumer.</li>
+        <li>Complaints should be submitted in writing – by post or by email to: <a href="mailto:kontakt@bobogna.pl">kontakt@bobogna.pl</a>.</li>
+        <li>The Seller will respond to a complaint within 14 days of receipt.</li>
+        <li>Warranty rights apply to Consumers only. Warranty liability is excluded in relation to Buyers who are not Consumers.</li>
+      </ol>
+    </div>
+
+    <div class="terms-section">
+      <div class="terms-section-num">§ 8</div>
+      <h2>Electronic Services</h2>
+      <div class="gold-rule"></div>
+      <ol>
+        <li>Through the Store, the Seller provides electronic services including: placing Orders, using the shopping cart, creating an account, subscribing to the Newsletter, downloading free materials, and posting comments.</li>
+        <li>Electronic services are provided free of charge.</li>
+        <li>The agreement for the provision of electronic services is concluded automatically when the User uses a given Service feature and remains in force for an indefinite period. The User may terminate it at any time without giving reasons.</li>
+        <li>The Seller may terminate the agreement with immediate effect if the User uses the Service in a manner contrary to law, good practices, or these Terms and Conditions.</li>
+      </ol>
+    </div>
+
+    <div class="terms-section">
+      <div class="terms-section-num">§ 9</div>
+      <h2>Personal Data</h2>
+      <div class="gold-rule"></div>
+      <ol>
+        <li>In connection with the fulfilment of these Terms and Conditions, the Seller processes the Buyer's personal data.</li>
+        <li>Detailed rules for the processing of personal data are set out in the Privacy Policy available at <a href="https://bobogna.pl/polityka-prywatnosci">www.bobogna.pl/polityka-prywatnosci</a>.</li>
+      </ol>
+    </div>
+
+    <div class="terms-section">
+      <div class="terms-section-num">§ 10</div>
+      <h2>Final Provisions</h2>
+      <div class="gold-rule"></div>
+      <ol>
+        <li>The Seller reserves the right to amend these Terms and Conditions. Agreements concluded before any amendment are governed by the Terms and Conditions in force at the date of conclusion.</li>
+        <li>These Terms and Conditions and all agreements concluded under them are governed by Polish law. Matters not regulated herein are subject to applicable statutory provisions.</li>
+        <li>Disputes with Consumers will be resolved by the court having jurisdiction under the Code of Civil Procedure. Disputes with non-Consumers will be resolved by the court having jurisdiction over the Seller's registered seat.</li>
+        <li>Consumers have access to out-of-court dispute resolution mechanisms, including the EU Online Dispute Resolution platform available at <a href="http://ec.europa.eu/consumers/odr" target="_blank">http://ec.europa.eu/consumers/odr</a>.</li>
+        <li>These Terms and Conditions enter into force on 31 January 2026.</li>
+      </ol>
+    </div>
+
+  </div>
+
+  <footer>
+    <p class="footer-copy">© 2026 Bobogna Edu Art. All rights reserved.</p>
+    <a href="/" class="footer-back">← Back to homepage</a>
+  </footer>
+
+</body>
+</html>

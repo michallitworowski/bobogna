@@ -1034,7 +1034,7 @@
             <li><a href="#" data-i18n="footer.col3.l1">Wysyłka</a></li>
             <li><a href="#" data-i18n="footer.col3.l2">Zwroty</a></li>
             <li><a href="#" data-i18n="footer.col3.l3">FAQ</a></li>
-            <li><a href="/regulamin.html" data-i18n="footer.col3.l4">Regulamin</a></li>
+            <li><a href="/regulamin.html" id="terms-link" data-i18n="footer.col3.l4">Regulamin</a></li>
           </ul>
         </div>
       </div>
@@ -1227,6 +1227,7 @@
       document.getElementById('btn-en').classList.toggle('active', !ispl);
       document.getElementById('btn-pl-mob').classList.toggle('active', ispl);
       document.getElementById('btn-en-mob').classList.toggle('active', !ispl);
+      document.getElementById('terms-link').href = ispl ? '/regulamin.html' : '/terms.html';
     }
 
     function setLang(lang) {
