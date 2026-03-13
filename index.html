@@ -1032,7 +1032,7 @@
           <h4 data-i18n="footer.col3.title">Pomoc</h4>
           <ul>
             <li><a href="#" data-i18n="footer.col3.l1">Wysyłka</a></li>
-            <li><a href="#" data-i18n="footer.col3.l2">Zwroty</a></li>
+            <li><a href="/zwroty.html" id="returns-link" data-i18n="footer.col3.l2">Zwroty</a></li>
             <li><a href="#" data-i18n="footer.col3.l3">FAQ</a></li>
             <li><a href="/regulamin.html" id="terms-link" data-i18n="footer.col3.l4">Regulamin</a></li>
             <li><a href="/polityka-prywatnosci.html" id="privacy-link" data-i18n="footer.col3.l5">Polityka prywatności</a></li>
@@ -1232,6 +1232,7 @@
       document.getElementById('btn-en-mob').classList.toggle('active', !ispl);
       document.getElementById('terms-link').href = ispl ? '/regulamin.html' : '/terms.html';
       document.getElementById('privacy-link').href = ispl ? '/polityka-prywatnosci.html' : '/privacy-policy.html';
+      document.getElementById('returns-link').href = ispl ? '/zwroty.html' : '/returns.html';
     }
 
     function setLang(lang) {

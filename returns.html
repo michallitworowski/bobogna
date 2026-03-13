@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Returns — Bobogna Edu Art</title>
+  <link rel="icon" type="image/png" href="brand_assets/B_logo.png">
+  <link rel="apple-touch-icon" href="brand_assets/B_logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --cream: #F5F0E8;
+      --navy: #1C2B4A;
+      --navy-light: #253660;
+      --gold: #B8922A;
+      --charcoal: #2D2D2D;
+      --warm-white: #FAF8F4;
+      --dust: #EDE6DA;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background: var(--warm-white);
+      color: var(--charcoal);
+      overflow-x: hidden;
+    }
+
+    body::after {
+      content: '';
+      position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+      pointer-events: none; z-index: 9999;
+    }
+
+    #nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 500;
+      padding: 28px 64px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(250,248,244,0.95);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 1px 0 rgba(44,44,44,0.07);
+    }
+    .nav-logo img { height: 26px; }
+    .nav-back {
+      font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--charcoal); text-decoration: none;
+      display: flex; align-items: center; gap: 10px;
+      transition: color 0.2s ease;
+    }
+    .nav-back:hover { color: var(--gold); }
+
+    .page-hero {
+      background: var(--cream);
+      padding: 160px 80px 80px;
+      position: relative; overflow: hidden;
+    }
+    .page-hero::before {
+      content: 'R';
+      position: absolute; right: 60px; top: 60px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28vw; line-height: 1;
+      color: rgba(184,146,42,0.04);
+      pointer-events: none; user-select: none;
+    }
+    .page-hero-label {
+      font-size: 9px; letter-spacing: 0.32em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 20px;
+    }
+    .page-hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 5vw, 6.5rem);
+      font-weight: 300; line-height: 0.9;
+      letter-spacing: -0.025em; color: var(--navy);
+      margin-bottom: 32px;
+    }
+    .page-hero-meta {
+      font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+      color: #aaa;
+    }
+
+    .terms-wrap {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 80px 80px 120px;
+    }
+
+    .terms-intro {
+      font-size: 15px; font-weight: 300; line-height: 1.9;
+      color: #6a6358; margin-bottom: 64px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(44,44,44,0.08);
+    }
+
+    .step { margin-bottom: 56px; display: flex; gap: 40px; align-items: flex-start; }
+
+    .step-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 5rem; font-weight: 300; line-height: 1;
+      color: rgba(184,146,42,0.15); flex-shrink: 0;
+      width: 72px; text-align: center;
+    }
+
+    .step-body { flex: 1; padding-top: 8px; }
+
+    .step-label {
+      font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 10px;
+    }
+
+    .step-body h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+      font-weight: 400; color: var(--navy);
+      margin-bottom: 20px; line-height: 1.1;
+    }
+
+    .gold-rule {
+      width: 36px; height: 1px;
+      background: var(--gold); margin: 0 0 24px;
+    }
+
+    .step-body p {
+      font-size: 14px; font-weight: 300; line-height: 1.9;
+      color: #6a6358; margin-bottom: 14px;
+    }
+
+    .step-body ul { list-style: none; margin-bottom: 14px; }
+    .step-body ul li {
+      font-size: 14px; font-weight: 300; line-height: 1.9;
+      color: #6a6358; margin-bottom: 8px;
+      padding-left: 20px; position: relative;
+    }
+    .step-body ul li::before {
+      content: '·'; position: absolute; left: 0; color: var(--gold);
+    }
+
+    .info-box {
+      background: var(--cream);
+      border-left: 2px solid var(--gold);
+      padding: 20px 24px;
+      margin-top: 48px;
+      font-size: 13px; font-weight: 300; line-height: 1.8; color: #6a6358;
+    }
+    .info-box a {
+      color: var(--navy); text-decoration: underline;
+      text-decoration-color: rgba(28,43,74,0.3);
+      transition: color 0.2s ease;
+    }
+    .info-box a:hover { color: var(--gold); }
+
+    footer {
+      background: #222220;
+      padding: 40px 80px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .footer-copy {
+      font-size: 10px; letter-spacing: 0.1em;
+      color: rgba(245,240,232,0.2);
+    }
+    .footer-back {
+      font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+      color: rgba(245,240,232,0.35); text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .footer-back:hover { color: var(--gold); }
+
+    @media (max-width: 900px) {
+      #nav { padding: 22px 32px; }
+      .page-hero { padding: 130px 32px 60px; }
+      .terms-wrap { padding: 60px 32px 80px; }
+      .step { gap: 24px; }
+      .step-num { font-size: 3.5rem; width: 52px; }
+      footer { padding: 32px; flex-direction: column; gap: 14px; text-align: center; }
+    }
+    @media (max-width: 480px) {
+      #nav { padding: 20px 20px; }
+      .page-hero { padding: 110px 20px 52px; }
+      .terms-wrap { padding: 48px 20px 64px; }
+      .step { flex-direction: column; gap: 12px; }
+      .step-num { font-size: 2.5rem; width: auto; text-align: left; }
+    }
+  </style>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
+</head>
+<body>
+
+  <nav id="nav">
+    <div class="nav-logo">
+      <a href="/"><img src="brand_assets/BOBOGNA_EDU_ART_black_a.png" alt="Bobogna Edu Art"></a>
+    </div>
+    <a href="/" class="nav-back">← Back to homepage</a>
+  </nav>
+
+  <div class="page-hero">
+    <div class="page-hero-label">Customer service</div>
+    <h1 class="page-hero-title">How to<br>Return Items</h1>
+    <p class="page-hero-meta">bobogna.pl</p>
+  </div>
+
+  <div class="terms-wrap">
+
+    <p class="terms-intro">
+      You have 14 days to withdraw from your purchase without giving any reason. Follow the step-by-step guide below to complete your return.<br><br>
+      Questions? Contact us at <a href="mailto:kontakt@bobogna.pl" style="color: var(--navy); text-decoration: underline; text-decoration-color: rgba(28,43,74,0.3);">kontakt@bobogna.pl</a>
+    </p>
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <div class="step-label">Step one</div>
+        <h2>Pack your items</h2>
+        <div class="gold-rule"></div>
+        <p>Make sure the items are well protected to prevent damage during transit.</p>
+        <ul>
+          <li>Pack the parcel in a regular-shaped cardboard box or a courier bag provided by the shipping carrier</li>
+          <li>Seal the parcel securely with tape</li>
+          <li>Do not use stretch film</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <div class="step-label">Step two</div>
+        <h2>Send your parcel</h2>
+        <div class="gold-rule"></div>
+        <p>You can send the parcel with any courier, via an InPost Parcel Locker, or at drop-off points such as:</p>
+        <ul>
+          <li>Żabka</li>
+          <li>Stokrotka</li>
+          <li>Auchan</li>
+          <li>Carrefour</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <div class="step-label">Step three</div>
+        <h2>Wait for your refund</h2>
+        <div class="gold-rule"></div>
+        <p>We will refund your payment within <strong>14 days</strong> of receiving the return.</p>
+        <p>The refund will be sent to the bank account number provided in your withdrawal form.</p>
+      </div>
+    </div>
+
+    <div class="info-box">
+      Have a question about your return? Email us at <a href="mailto:kontakt@bobogna.pl">kontakt@bobogna.pl</a> — we'll get back to you as soon as possible. For full details, please refer to our <a href="/terms.html">Terms &amp; Conditions</a>.
+    </div>
+
+  </div>
+
+  <footer>
+    <p class="footer-copy">© 2026 Bobogna Edu Art. All rights reserved.</p>
+    <a href="/" class="footer-back">← Back to homepage</a>
+  </footer>
+
+</body>
+</html>
