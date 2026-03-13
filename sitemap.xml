@@ -9,8 +9,11 @@
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="pl" href="https://bobogna.pl/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://bobogna.pl/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://bobogna.pl/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bobogna.pl/"/>
   </url>
 
+  <!-- Terms & Conditions -->
   <url>
     <loc>https://bobogna.pl/regulamin.html</loc>
     <lastmod>2026-03-13</lastmod>
@@ -18,8 +21,8 @@
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="pl" href="https://bobogna.pl/regulamin.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://bobogna.pl/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://bobogna.pl/villkor.html"/>
   </url>
-
   <url>
     <loc>https://bobogna.pl/terms.html</loc>
     <lastmod>2026-03-13</lastmod>
@@ -27,8 +30,19 @@
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="pl" href="https://bobogna.pl/regulamin.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://bobogna.pl/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://bobogna.pl/villkor.html"/>
+  </url>
+  <url>
+    <loc>https://bobogna.pl/villkor.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://bobogna.pl/regulamin.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bobogna.pl/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://bobogna.pl/villkor.html"/>
   </url>
 
+  <!-- Privacy Policy -->
   <url>
     <loc>https://bobogna.pl/polityka-prywatnosci.html</loc>
     <lastmod>2026-03-13</lastmod>
@@ -36,8 +50,8 @@
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="pl" href="https://bobogna.pl/polityka-prywatnosci.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://bobogna.pl/privacy-policy.html"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://bobogna.pl/integritetspolicy.html"/>
   </url>
-
   <url>
     <loc>https://bobogna.pl/privacy-policy.html</loc>
     <lastmod>2026-03-13</lastmod>
@@ -45,8 +59,19 @@
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="pl" href="https://bobogna.pl/polityka-prywatnosci.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://bobogna.pl/privacy-policy.html"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://bobogna.pl/integritetspolicy.html"/>
+  </url>
+  <url>
+    <loc>https://bobogna.pl/integritetspolicy.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://bobogna.pl/polityka-prywatnosci.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bobogna.pl/privacy-policy.html"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://bobogna.pl/integritetspolicy.html"/>
   </url>
 
+  <!-- Returns -->
   <url>
     <loc>https://bobogna.pl/zwroty.html</loc>
     <lastmod>2026-03-13</lastmod>
@@ -54,8 +79,8 @@
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="pl" href="https://bobogna.pl/zwroty.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://bobogna.pl/returns.html"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://bobogna.pl/returer.html"/>
   </url>
-
   <url>
     <loc>https://bobogna.pl/returns.html</loc>
     <lastmod>2026-03-13</lastmod>
@@ -63,6 +88,16 @@
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="pl" href="https://bobogna.pl/zwroty.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://bobogna.pl/returns.html"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://bobogna.pl/returer.html"/>
+  </url>
+  <url>
+    <loc>https://bobogna.pl/returer.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://bobogna.pl/zwroty.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bobogna.pl/returns.html"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://bobogna.pl/returer.html"/>
   </url>
 
 </urlset>

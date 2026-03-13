@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Integritetspolicy — Bobogna Edu Art</title>
+  <meta name="description" content="Integritetspolicy för Bobogna Edu Art — behandling av personuppgifter, cookies och användarrättigheter.">
+  <link rel="canonical" href="https://bobogna.pl/integritetspolicy.html">
+  <link rel="alternate" hreflang="sv" href="https://bobogna.pl/integritetspolicy.html">
+  <link rel="alternate" hreflang="pl" href="https://bobogna.pl/polityka-prywatnosci.html">
+  <link rel="alternate" hreflang="en" href="https://bobogna.pl/privacy-policy.html">
+  <meta property="og:title" content="Integritetspolicy — Bobogna Edu Art">
+  <meta property="og:description" content="Integritetspolicy för Bobogna Edu Art.">
+  <meta property="og:url" content="https://bobogna.pl/integritetspolicy.html">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" href="brand_assets/B_logo.png">
+  <link rel="apple-touch-icon" href="brand_assets/B_logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --cream: #F5F0E8; --navy: #1C2B4A; --navy-light: #253660;
+      --gold: #B8922A; --charcoal: #2D2D2D; --warm-white: #FAF8F4;
+    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Jost', sans-serif; background: var(--warm-white); color: var(--charcoal); overflow-x: hidden; }
+    body::after {
+      content: ''; position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+      pointer-events: none; z-index: 9999;
+    }
+    #nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 500;
+      padding: 28px 64px; display: flex; align-items: center; justify-content: space-between;
+      background: rgba(250,248,244,0.95); backdrop-filter: blur(14px);
+      box-shadow: 0 1px 0 rgba(44,44,44,0.07);
+    }
+    .nav-logo img { height: 26px; }
+    .nav-back {
+      font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--charcoal); text-decoration: none;
+      display: flex; align-items: center; gap: 10px; transition: color 0.2s ease;
+    }
+    .nav-back:hover { color: var(--gold); }
+    .page-hero {
+      background: var(--cream); padding: 160px 80px 80px;
+      position: relative; overflow: hidden;
+    }
+    .page-hero::before {
+      content: 'I'; position: absolute; right: 60px; top: 60px;
+      font-family: 'Cormorant Garamond', serif; font-size: 28vw; line-height: 1;
+      color: rgba(184,146,42,0.04); pointer-events: none; user-select: none;
+    }
+    .page-hero-label { font-size: 9px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+    .page-hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 5vw, 6.5rem); font-weight: 300;
+      line-height: 0.9; letter-spacing: -0.025em; color: var(--navy); margin-bottom: 32px;
+    }
+    .page-hero-meta { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #aaa; }
+    .terms-wrap { max-width: 820px; margin: 0 auto; padding: 80px 80px 120px; }
+    .terms-intro {
+      font-size: 15px; font-weight: 300; line-height: 1.9; color: #6a6358;
+      margin-bottom: 64px; padding-bottom: 48px; border-bottom: 1px solid rgba(44,44,44,0.08);
+    }
+    .terms-intro a { color: var(--navy); text-decoration: underline; text-decoration-color: rgba(28,43,74,0.3); transition: color 0.2s ease; }
+    .terms-intro a:hover { color: var(--gold); }
+    .terms-section { margin-bottom: 56px; }
+    .terms-section-num { font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+    .terms-section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.5rem, 2.5vw, 2.2rem); font-weight: 400;
+      color: var(--navy); margin-bottom: 24px; line-height: 1.1;
+    }
+    .terms-section p { font-size: 14px; font-weight: 300; line-height: 1.9; color: #6a6358; margin-bottom: 14px; }
+    .terms-section ul { list-style: none; margin-bottom: 14px; }
+    .terms-section ul li {
+      font-size: 14px; font-weight: 300; line-height: 1.9; color: #6a6358;
+      margin-bottom: 8px; padding-left: 20px; position: relative;
+    }
+    .terms-section ul li::before { content: '·'; position: absolute; left: 0; color: var(--gold); }
+    .terms-section a { color: var(--navy); text-decoration: underline; text-decoration-color: rgba(28,43,74,0.3); transition: color 0.2s ease; }
+    .terms-section a:hover { color: var(--gold); }
+    .gold-rule { width: 36px; height: 1px; background: var(--gold); margin: 0 0 32px; }
+    footer {
+      background: #222220; padding: 40px 80px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .footer-copy { font-size: 10px; letter-spacing: 0.1em; color: rgba(245,240,232,0.2); }
+    .footer-back {
+      font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+      color: rgba(245,240,232,0.35); text-decoration: none; transition: color 0.2s ease;
+    }
+    .footer-back:hover { color: var(--gold); }
+    @media (max-width: 900px) {
+      #nav { padding: 22px 32px; }
+      .page-hero { padding: 130px 32px 60px; }
+      .terms-wrap { padding: 60px 32px 80px; }
+      footer { padding: 32px; flex-direction: column; gap: 14px; text-align: center; }
+    }
+    @media (max-width: 480px) {
+      #nav { padding: 20px 20px; }
+      .page-hero { padding: 110px 20px 52px; }
+      .terms-wrap { padding: 48px 20px 64px; }
+    }
+  </style>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
+</head>
+<body>
+
+  <nav id="nav">
+    <div class="nav-logo">
+      <a href="/"><img src="brand_assets/BOBOGNA_EDU_ART_black_a.png" alt="Bobogna Edu Art"></a>
+    </div>
+    <a href="/" class="nav-back">← Tillbaka till startsidan</a>
+  </nav>
+
+  <div class="page-hero">
+    <div class="page-hero-label">Juridiska dokument</div>
+    <h1 class="page-hero-title">Integritets-<br>policy</h1>
+    <p class="page-hero-meta">bobogna.pl</p>
+  </div>
+
+  <div class="terms-wrap">
+
+    <p class="terms-intro">
+      Denna integritetspolicy beskriver hur vi hanterar personuppgifter och hur vi använder cookies och annan teknik på webbplatsen bobogna.pl.<br><br>
+      För frågor rörande skydd av dina personuppgifter, kontakta oss på: <a href="mailto:kontakt@bobogna.pl">kontakt@bobogna.pl</a>.<br><br>
+      Att lämna personuppgifter och samtycka till behandling av dem är helt frivilligt. Alla personuppgifter du lämnar behandlas uteslutande i den utsträckning och för det ändamål du har gett ditt samtycke till.
+    </p>
+
+    <div class="terms-section">
+      <div class="terms-section-num">01</div>
+      <h2>GDPR och personuppgiftsansvarig</h2>
+      <div class="gold-rule"></div>
+      <p>Sedan den 25 maj 2018 gäller Europaparlamentets och rådets förordning (EU) 2016/679 (GDPR), som inför nya bestämmelser om kundernas rättigheter.</p>
+      <p>Personuppgiftsansvarig för bobogna.pl är:<br>
+        <strong>Agnieszka Litworowska</strong><br>
+        Winiary 280, 32-420 gm. Gdów, Polen<br>
+        Skattenummer (NIP): 5732619322
+      </p>
+      <p>Du har följande rättigheter i samband med behandlingen av dina uppgifter:</p>
+      <ul>
+        <li>rätt att begära tillgång till dina personuppgifter, rättelse, radering eller begränsning av behandlingen</li>
+        <li>rätt att invända mot behandling</li>
+        <li>rätt till dataportabilitet</li>
+        <li>rätt att återkalla samtycke till behandling av personuppgifter för ett specifikt ändamål</li>
+        <li>rätt att lämna in klagomål till en tillsynsmyndighet</li>
+      </ul>
+      <p>Du kan utöva dessa rättigheter i enlighet med artiklarna 16–21 i GDPR genom att kontakta oss på: <a href="mailto:kontakt@bobogna.pl">kontakt@bobogna.pl</a>.</p>
+    </div>
+
+    <div class="terms-section">
+      <div class="terms-section-num">02</div>
+      <h2>Ändamål och rättslig grund för behandlingen</h2>
+      <div class="gold-rule"></div>
+      <p>Vi behandlar dina personuppgifter i synnerhet för att:</p>
+      <ul>
+        <li>registrera ett konto och hantera transaktioner på bobogna.pl</li>
+        <li>hantera förfrågningar och ärenden som skickas till oss</li>
+        <li>kontakta dig i samband med tillhandahållande av tjänster</li>
+        <li>behandla uppgifter för skatte- och redovisningsändamål</li>
+        <li>tillhandahålla betalningstjänster</li>
+      </ul>
+      <p>Baserat på ditt samtycke behandlar vi uppgifter för att: lagra cookies, organisera reklamkampanjer och tävlingar, samt skicka nyhetsbrev.</p>
+      <p>Du kan när som helst återkalla ditt samtycke till behandling av uppgifter genom att skicka ett e-postmeddelande till: <a href="mailto:kontakt@bobogna.pl">kontakt@bobogna.pl</a>.</p>
+    </div>
+
+    <div class="terms-section">
+      <div class="terms-section-num">03</div>
+      <h2>Mottagare av personuppgifter</h2>
+      <div class="gold-rule"></div>
+      <p>Dina uppgifter kan behandlas av följande enheter:</p>
+      <ul>
+        <li><strong>home.pl Sp. z o.o.</strong> – datalagring på server</li>
+        <li><strong>Rocket Science Group (MailChimp)</strong> – e-postsystem för utskick av nyhetsbrev</li>
+        <li><strong>Google LLC</strong> – extern G Suite-postserver</li>
+        <li><strong>Tpay – Krajowy Integrator Płatności S.A.</strong> – betalningshantering</li>
+        <li>redovisningsbyråer som tillhandahåller finansiella och bokföringstjänster</li>
+        <li>enheter som tillhandahåller IT-tjänster och programvara</li>
+      </ul>
+      <p>Vi kan lämna ut dina personuppgifter till offentliga myndigheter som bekämpar bedrägeri och missbruk.</p>
+    </div>
+
+    <div class="terms-section">
+      <div class="terms-section-num">04</div>
+      <h2>Hur länge lagrar vi dina uppgifter?</h2>
+      <div class="gold-rule"></div>
+      <p>Vi lagrar dina personuppgifter under avtalets löptid och efter dess upphörande:</p>
+      <ul>
+        <li>för att uppfylla skyldigheter enligt skatte- och redovisningslagstiftning</li>
+        <li>för statistiska och arkiveringsändamål</li>
+        <li>under en period på maximalt 10 år från avtalets fullgörande</li>
+        <li>fakturor med dina uppgifter lagras i 5 år från utgången av det skatteår då skattskyldigheten uppstod</li>
+      </ul>
+    </div>
+
+    <div class="terms-section">
+      <div class="terms-section-num">05</div>
+      <h2>Överföring av uppgifter utanför EES</h2>
+      <div class="gold-rule"></div>
+      <p>På grund av användningen av Googles och Facebooks tjänster kan dina uppgifter överföras till Förenta staterna (USA) och Kanada. Dessa enheter garanterar en adekvat nivå av personuppgiftsskydd i enlighet med europeiska förordningar.</p>
+      <p>Dina personuppgifter behandlas inte automatiskt (inklusive profilering) på ett sätt som påverkar dina rättigheter.</p>
+    </div>
+
+    <div class="terms-section">
+      <div class="terms-section-num">06</div>
+      <h2>Användarkonto</h2>
+      <div class="gold-rule"></div>
+      <p>För att skapa ett konto måste du ange: e-postadress, för- och efternamn, adress och telefonnummer. Uppgifter behandlas på grundval av avtalet om tillhandahållande av elektroniska tjänster (artikel 6.1 b GDPR) under kontots livstid.</p>
+      <p>Du kan när som helst ändra, korrigera eller radera uppgifterna i ditt konto. Du har rätt till dataportabilitet enligt artikel 20 i GDPR.</p>
+    </div>
+
+    <div class="terms-section">
+      <div class="terms-section-num">07</div>
+      <h2>Nyhetsbrev</h2>
+      <div class="gold-rule"></div>
+      <p>Genom att prenumerera på nyhetsbrevet lämnar du din e-postadress till oss. Den rättsliga grunden för behandlingen är ditt samtycke som du lämnat genom att kryssa i relevant ruta vid prenumerationen.</p>
+      <p>Du kan avsluta prenumerationen på nyhetsbrevet när som helst, vilket resulterar i att dina uppgifter raderas från databasen. Du har rätt till dataportabilitet (artikel 20 GDPR).</p>
+    </div>
+
+    <div class="terms-section">
+      <div class="terms-section-num">08</div>
+      <h2>Beställningar och fakturor</h2>
+      <div class="gold-rule"></div>
+      <p>För att lägga en beställning måste du ange: för- och efternamn, faktureringsadress, e-postadress och telefonnummer. Uppgifter behandlas för att fullgöra beställningen (artikel 6.1 b GDPR), utfärda faktura (artikel 6.1 c GDPR) och för arkiverings- och statistikändamål (artikel 6.1 f GDPR).</p>
+      <p>Beställningsuppgifter behandlas under den tid som krävs för att fullgöra beställningen och därefter till dess att preskriptionstiden för fordringar som uppstår ur avtalet löper ut.</p>
+    </div>
+
+    <div class="terms-section">
+      <div class="terms-section-num">09</div>
+      <h2>Reklamationer och frånträdande av avtal</h2>
+      <div class="gold-rule"></div>
+      <p>Uppgifter som lämnats i samband med en reklamation eller frånträdande av avtal (för- och efternamn, adress, telefonnummer, e-postadress, bankkontonummer) används uteslutande för att hantera reklamations- eller frånträdandeproceduren (artikel 6.1 c GDPR).</p>
+      <p>Ångerrätten gäller inte för digitalt innehåll (PDF-filer) som redan har laddats ner av konsumenten.</p>
+    </div>
+
+    <div class="terms-section">
+      <div class="terms-section-num">10</div>
+      <h2>Cookies</h2>
+      <div class="gold-rule"></div>
+      <p>Webbplatsen bobogna.pl använder cookie-teknik. Vi använder cookies baserat på ditt samtycke, utom i de fall de är nödvändiga för korrekt tillhandahållande av den elektroniska tjänsten.</p>
+      <p>Cookies är små textfiler som lagras på din enhet. De tillåter inte att personuppgifter eller konfidentiell information laddas ner.</p>
+      <p>Följande tredjepartscookies används på webbplatsen:</p>
+      <ul>
+        <li><strong>Google Analytics</strong> – generering av statistik och analys för optimering av webbplatsen</li>
+        <li><strong>Google AdWords / AdSense</strong> – visning av personanpassade annonser</li>
+        <li><strong>Facebook Pixel</strong> – inriktning av personanpassade annonser</li>
+        <li><strong>Facebook, Instagram, Google, Pinterest, YouTube</strong> – verktyg för sociala medier</li>
+      </ul>
+      <p>Integritetspolicyer från tredjepartsleverantörer: <a href="https://www.facebook.com/legal/FB_Work_Privacy" target="_blank">Facebook</a>, <a href="https://policies.google.com/privacy" target="_blank">Google</a>, <a href="https://policy.pinterest.com/en/privacy-policy" target="_blank">Pinterest</a>, <a href="https://www.youtube.com/static?template=terms" target="_blank">YouTube</a>.</p>
+    </div>
+
+    <div class="terms-section">
+      <div class="terms-section-num">11</div>
+      <h2>Serverloggar</h2>
+      <div class="gold-rule"></div>
+      <p>Att använda vår webbplats innebär att förfrågningar skickas till servern. Varje förfrågan registreras i serverloggarna och inkluderar bland annat: IP-adress, datum och tid, information om webbläsare och operativsystem.</p>
+      <p>Uppgifter lagrade i serverloggar associeras inte med specifika individer som använder webbplatsen och används inte för att identifiera användare. De tjänar uteslutande som hjälpmaterial för webbplatsadministration.</p>
+    </div>
+
+    <div class="terms-section">
+      <div class="terms-section-num">12</div>
+      <h2>Slutbestämmelser</h2>
+      <div class="gold-rule"></div>
+      <p>Vi förbehåller oss rätten att ändra denna integritetspolicy. Användare meddelas om ändringar med minst 7 dagars varsel. Varje ny version publiceras med ett nytt datum.</p>
+      <p>Har du frågor, kontakta oss på: <a href="mailto:kontakt@bobogna.pl">kontakt@bobogna.pl</a>.</p>
+    </div>
+
+  </div>
+
+  <footer>
+    <p class="footer-copy">© 2026 Bobogna Edu Art. Alla rättigheter förbehållna.</p>
+    <a href="/" class="footer-back">← Tillbaka till startsidan</a>
+  </footer>
+
+</body>
+</html>

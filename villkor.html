@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Villkor — Bobogna Edu Art</title>
+  <meta name="description" content="Köpvillkor för Bobogna Edu Art — beställning, betalning, leverans och reklamationer.">
+  <link rel="canonical" href="https://bobogna.pl/villkor.html">
+  <link rel="alternate" hreflang="sv" href="https://bobogna.pl/villkor.html">
+  <link rel="alternate" hreflang="pl" href="https://bobogna.pl/regulamin.html">
+  <link rel="alternate" hreflang="en" href="https://bobogna.pl/terms.html">
+  <meta property="og:title" content="Villkor — Bobogna Edu Art">
+  <meta property="og:description" content="Köpvillkor för Bobogna Edu Art.">
+  <meta property="og:url" content="https://bobogna.pl/villkor.html">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" href="brand_assets/B_logo.png">
+  <link rel="apple-touch-icon" href="brand_assets/B_logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --cream: #F5F0E8; --navy: #1C2B4A; --navy-light: #253660;
+      --gold: #B8922A; --charcoal: #2D2D2D; --warm-white: #FAF8F4;
+    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Jost', sans-serif; background: var(--warm-white); color: var(--charcoal); overflow-x: hidden; }
+    body::after {
+      content: ''; position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+      pointer-events: none; z-index: 9999;
+    }
+    #nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 500;
+      padding: 28px 64px; display: flex; align-items: center; justify-content: space-between;
+      background: rgba(250,248,244,0.95); backdrop-filter: blur(14px);
+      box-shadow: 0 1px 0 rgba(44,44,44,0.07);
+    }
+    .nav-logo img { height: 26px; }
+    .nav-back {
+      font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--charcoal); text-decoration: none;
+      display: flex; align-items: center; gap: 10px; transition: color 0.2s ease;
+    }
+    .nav-back:hover { color: var(--gold); }
+    .page-hero {
+      background: var(--cream); padding: 160px 80px 80px;
+      position: relative; overflow: hidden;
+    }
+    .page-hero::before {
+      content: 'V'; position: absolute; right: 60px; top: 60px;
+      font-family: 'Cormorant Garamond', serif; font-size: 28vw; line-height: 1;
+      color: rgba(184,146,42,0.04); pointer-events: none; user-select: none;
+    }
+    .page-hero-label { font-size: 9px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+    .page-hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 5vw, 6.5rem); font-weight: 300;
+      line-height: 0.9; letter-spacing: -0.025em; color: var(--navy); margin-bottom: 32px;
+    }
+    .page-hero-meta { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #aaa; }
+    .terms-wrap { max-width: 820px; margin: 0 auto; padding: 80px 80px 120px; }
+    .terms-intro {
+      font-size: 15px; font-weight: 300; line-height: 1.9; color: #6a6358;
+      margin-bottom: 64px; padding-bottom: 48px; border-bottom: 1px solid rgba(44,44,44,0.08);
+    }
+    .terms-intro a { color: var(--navy); text-decoration: underline; text-decoration-color: rgba(28,43,74,0.3); transition: color 0.2s ease; }
+    .terms-intro a:hover { color: var(--gold); }
+    .terms-section { margin-bottom: 56px; }
+    .terms-section-num { font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+    .terms-section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.5rem, 2.5vw, 2.2rem); font-weight: 400;
+      color: var(--navy); margin-bottom: 24px; line-height: 1.1;
+    }
+    .terms-section p { font-size: 14px; font-weight: 300; line-height: 1.9; color: #6a6358; margin-bottom: 14px; }
+    .terms-section ol { list-style: none; counter-reset: terms-counter; margin-bottom: 14px; }
+    .terms-section ol li {
+      counter-increment: terms-counter;
+      font-size: 14px; font-weight: 300; line-height: 1.9; color: #6a6358;
+      margin-bottom: 10px; padding-left: 28px; position: relative;
+    }
+    .terms-section ol li::before {
+      content: counter(terms-counter) "."; position: absolute; left: 0;
+      color: var(--gold); font-size: 11px; letter-spacing: 0.05em; top: 3px;
+    }
+    .terms-section ul { list-style: none; margin-bottom: 14px; }
+    .terms-section ul li {
+      font-size: 14px; font-weight: 300; line-height: 1.9; color: #6a6358;
+      margin-bottom: 8px; padding-left: 20px; position: relative;
+    }
+    .terms-section ul li::before { content: '·'; position: absolute; left: 0; color: var(--gold); }
+    .terms-section a { color: var(--navy); text-decoration: underline; text-decoration-color: rgba(28,43,74,0.3); transition: color 0.2s ease; }
+    .terms-section a:hover { color: var(--gold); }
+    .gold-rule { width: 36px; height: 1px; background: var(--gold); margin: 0 0 32px; }
+    footer {
+      background: #222220; padding: 40px 80px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .footer-copy { font-size: 10px; letter-spacing: 0.1em; color: rgba(245,240,232,0.2); }
+    .footer-back {
+      font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+      color: rgba(245,240,232,0.35); text-decoration: none; transition: color 0.2s ease;
+    }
+    .footer-back:hover { color: var(--gold); }
+    @media (max-width: 900px) {
+      #nav { padding: 22px 32px; }
+      .page-hero { padding: 130px 32px 60px; }
+      .terms-wrap { padding: 60px 32px 80px; }
+      footer { padding: 32px; flex-direction: column; gap: 14px; text-align: center; }
+    }
+    @media (max-width: 480px) {
+      #nav { padding: 20px 20px; }
+      .page-hero { padding: 110px 20px 52px; }
+      .terms-wrap { padding: 48px 20px 64px; }
+    }
+  </style>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
+</head>
+<body>
+
+  <nav id="nav">
+    <div class="nav-logo">
+      <a href="/"><img src="brand_assets/BOBOGNA_EDU_ART_black_a.png" alt="Bobogna Edu Art"></a>
+    </div>
+    <a href="/" class="nav-back">← Tillbaka till startsidan</a>
+  </nav>
+
+  <div class="page-hero">
+    <div class="page-hero-label">Juridiska dokument</div>
+    <h1 class="page-hero-title">Köp-<br>villkor</h1>
+    <p class="page-hero-meta">Gäller från och med 31 januari 2026</p>
+  </div>
+
+  <div class="terms-wrap">
+
+    <p class="terms-intro">
+      Dessa köpvillkor innehåller information om hur du lägger en beställning och ingår ett köpeavtal, tillgängliga betalningsmetoder, leveransregler, reklamationsprocess och tillhandahållande av elektroniska tjänster.<br><br>
+      Har du frågor? Skriv till oss: <a href="mailto:kontakt@bobogna.pl">kontakt@bobogna.pl</a>
+    </p>
+
+    <div class="terms-section">
+      <div class="terms-section-num">§ 1</div>
+      <h2>Definitioner</h2>
+      <div class="gold-rule"></div>
+      <p>I dessa villkor gäller följande definitioner:</p>
+      <ul>
+        <li><strong>Säljaren</strong> – Agnieszka Litworowska, Winiary 280, 32-420 gm Gdów, Polen, Skattenummer (NIP): 5732619322</li>
+        <li><strong>Köparen</strong> – en person med full rättslig handlingsförmåga som lägger en beställning i butiken enligt dessa villkor</li>
+        <li><strong>Butiken</strong> – nätbutiken tillgänglig på <a href="https://bobogna.pl/sklep">https://bobogna.pl/sklep</a></li>
+        <li><strong>Produkten</strong> – en vara tillgänglig i butiken som kan vara föremål för ett köpeavtal; väsentliga egenskaper och bruttopriset publiceras på produktens butikssida</li>
+        <li><strong>Konsumenten</strong> – en köpare som är en fysisk person och ingår ett avtal med säljaren utan direkt samband med sin affärsverksamhet</li>
+        <li><strong>Tjänsten</strong> – webbplatsen som drivs av säljaren på <a href="https://bobogna.pl">https://bobogna.pl</a></li>
+        <li><strong>Villkoren</strong> – detta dokument, tillgängligt på <a href="https://bobogna.pl/villkor">https://bobogna.pl/villkor</a></li>
+        <li><strong>Beställningen</strong> – köparens avsiktsförklaring som utgör ett erbjudande om att ingå ett köpeavtal, gjord via kundvagnsfunktionen</li>
+        <li><strong>Köpeavtalet</strong> – ett köpeavtal som ingås mellan säljaren och köparen via butikens försäljningssystem</li>
+      </ul>
+    </div>
+
+    <div class="terms-section">
+      <div class="terms-section-num">§ 2</div>
+      <h2>Inledning</h2>
+      <div class="gold-rule"></div>
+      <ol>
+        <li>Dessa villkor reglerar säljarens försäljning av produkter via butiken och fastställer parternas ömsesidiga rättigheter och skyldigheter.</li>
+        <li>Att lägga en beställning i butiken kräver att köparen läser och godkänner dessa villkor under beställningsprocessen.</li>
+        <li>Att lägga en beställning bekräftar att köparen har läst och godkänt dessa villkor.</li>
+        <li>Säljaren kan kontaktas via e-post på <a href="mailto:kontakt@bobogna.pl">kontakt@bobogna.pl</a>.</li>
+        <li>Minimala tekniska krav för att använda butiken: vanligt operativsystem, vanlig webbläsare, vanlig PDF-läsare och en aktiv e-postadress angiven korrekt i beställningsformuläret.</li>
+        <li>Informationen i butiken utgör inte ett erbjudande i civilrättslig mening; det är en inbjudan till köparen att lämna anbud.</li>
+      </ol>
+    </div>
+
+    <div class="terms-section">
+      <div class="terms-section-num">§ 3</div>
+      <h2>Beställningar och köpeavtal</h2>
+      <div class="gold-rule"></div>
+      <ol>
+        <li>Beställningar kan läggas dygnet runt, sju dagar i veckan, hela året, utom under planerade underhållsperioder som annonseras på webbplatsen.</li>
+        <li>Beställningar kan läggas med eller utan registrering av ett konto i butiken.</li>
+        <li>För att lägga en beställning måste köparen: välja produkt(er), lägga dem i kundvagnen, välja leveranssätt, fylla i beställningsformuläret, godkänna dessa villkor, välja betalningsmetod och klicka på "Köp och betala".</li>
+        <li>Köpeavtalet ingås när köparen får ett e-postmeddelande som bekräftar beställningsuppgifterna och att säljaren accepterat beställningen.</li>
+        <li>Betalning måste ske inom 48 timmar efter mottagande av orderbekräftelsen. Om betalning inte mottas inom denna period annulleras beställningen.</li>
+        <li>En elektronisk faktura skickas till köparens e-postadress om köparen lämnar nödvändiga fakturauppgifter.</li>
+      </ol>
+    </div>
+
+    <div class="terms-section">
+      <div class="terms-section-num">§ 4</div>
+      <h2>Betalningar</h2>
+      <div class="gold-rule"></div>
+      <ol>
+        <li>Betalningar kan göras via banköverföring till säljarens konto, via TPay-betalningssystemet eller med Visa eller MasterCard.</li>
+        <li>Leveranskostnader beror på valt leveranssätt:
+          <ul>
+            <li>Nedladdning av digital fil (PDF) – gratis</li>
+            <li>InPost Paketautomat (storlek A) – 14 PLN, (storlek B) – 15,49 PLN, (storlek C) – 17,49 PLN</li>
+            <li>InPost Budservice – 16,99 PLN</li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+
+    <div class="terms-section">
+      <div class="terms-section-num">§ 5</div>
+      <h2>Leverans</h2>
+      <div class="gold-rule"></div>
+      <ol>
+        <li>Säljaren levererar beställda produkter på det sätt som köparen valt i beställningsformuläret.</li>
+        <li>Tillgängliga leveransalternativ:
+          <ul>
+            <li>Digital leverans – en nedladdningslänk skickas till köparens e-postadress efter betalning; filen kan laddas ner ett obegränsat antal gånger utan tidsbegränsning</li>
+            <li>Polska posten – beräknad leveranstid ca 3 arbetsdagar (rekommenderat) eller ca 10 arbetsdagar (prioritetsbrev)</li>
+            <li>InPost Paketautomater eller InPost Budservice</li>
+          </ul>
+        </li>
+        <li>Säljaren meddelar köparen via e-post när produkterna har skickats.</li>
+      </ol>
+    </div>
+
+    <div class="terms-section">
+      <div class="terms-section-num">§ 6</div>
+      <h2>Ångerrätt</h2>
+      <div class="gold-rule"></div>
+      <ol>
+        <li>En konsument som ingått ett distansköpeavtal har rätt att frånträda det utan att ange något skäl inom 14 dagar från det att konsumenten fått varan i sin besittning, genom att skicka en förklaring till säljarens e-postadress.</li>
+        <li>Vid frånträdande återbetalar säljaren alla betalningar som mottagits från konsumenten senast 14 dagar från det datum säljaren informerades om utövandet av ångerrätten.</li>
+        <li>Konsumenten bär de direkta kostnaderna för att returnera produkten till säljaren.</li>
+        <li>Ångerrätten gäller inte för köp av digitala produkter (PDF-filer) som redan laddats ner av konsumenten.</li>
+      </ol>
+    </div>
+
+    <div class="terms-section">
+      <div class="terms-section-num">§ 7</div>
+      <h2>Reklamationer</h2>
+      <div class="gold-rule"></div>
+      <ol>
+        <li>Säljaren är skyldig att leverera en produkt fri från defekter till konsumenten.</li>
+        <li>Reklamationer ska lämnas skriftligen – per post eller e-post till: <a href="mailto:kontakt@bobogna.pl">kontakt@bobogna.pl</a>.</li>
+        <li>Säljaren svarar på reklamationer inom 14 dagar från mottagandet.</li>
+        <li>Garantirättigheter gäller endast konsumenter. Garantiansvar utesluts i förhållande till köpare som inte är konsumenter.</li>
+      </ol>
+    </div>
+
+    <div class="terms-section">
+      <div class="terms-section-num">§ 8</div>
+      <h2>Elektroniska tjänster</h2>
+      <div class="gold-rule"></div>
+      <ol>
+        <li>Via butiken tillhandahåller säljaren elektroniska tjänster som inkluderar: lägga beställningar, använda kundvagnen, skapa ett konto, prenumerera på nyhetsbrevet, ladda ner gratis material och publicera kommentarer.</li>
+        <li>Elektroniska tjänster tillhandahålls gratis.</li>
+        <li>Avtalet om tillhandahållande av elektroniska tjänster ingås automatiskt när användaren använder en given tjänstefunktion och gäller på obestämd tid. Användaren kan säga upp det när som helst utan att ange skäl.</li>
+        <li>Säljaren kan säga upp avtalet med omedelbar verkan om användaren använder tjänsten på ett sätt som strider mot lag, god sed eller dessa villkor.</li>
+      </ol>
+    </div>
+
+    <div class="terms-section">
+      <div class="terms-section-num">§ 9</div>
+      <h2>Personuppgifter</h2>
+      <div class="gold-rule"></div>
+      <ol>
+        <li>I samband med fullgörandet av dessa villkor behandlar säljaren köparens personuppgifter.</li>
+        <li>Detaljerade regler för behandling av personuppgifter finns i Integritetspolicyn på <a href="/integritetspolicy.html">/integritetspolicy.html</a>.</li>
+      </ol>
+    </div>
+
+    <div class="terms-section">
+      <div class="terms-section-num">§ 10</div>
+      <h2>Slutbestämmelser</h2>
+      <div class="gold-rule"></div>
+      <ol>
+        <li>Säljaren förbehåller sig rätten att ändra dessa villkor. Avtal som ingåtts före en ändring regleras av de villkor som gällde vid tidpunkten för avtalets ingående.</li>
+        <li>Dessa villkor och alla avtal som ingåtts under dem regleras av polsk lag.</li>
+        <li>Tvister med konsumenter löses av behörig domstol. Konsumenter har tillgång till alternativa tvistlösningsmekanismer, inklusive EU:s plattform för tvistlösning online på <a href="http://ec.europa.eu/consumers/odr" target="_blank">http://ec.europa.eu/consumers/odr</a>.</li>
+        <li>Dessa villkor träder i kraft den 31 januari 2026.</li>
+      </ol>
+    </div>
+
+  </div>
+
+  <footer>
+    <p class="footer-copy">© 2026 Bobogna Edu Art. Alla rättigheter förbehållna.</p>
+    <a href="/" class="footer-back">← Tillbaka till startsidan</a>
+  </footer>
+
+</body>
+</html>

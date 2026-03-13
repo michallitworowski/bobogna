@@ -830,6 +830,8 @@
       <button class="lang-btn active" id="btn-pl-mob" onclick="setLang('pl'); closeMobileMenu()">PL</button>
       <span class="lang-sep">/</span>
       <button class="lang-btn" id="btn-en-mob" onclick="setLang('en'); closeMobileMenu()">EN</button>
+      <span class="lang-sep">/</span>
+      <button class="lang-btn" id="btn-sv-mob" onclick="setLang('sv'); closeMobileMenu()">SV</button>
     </div>
   </div>
 
@@ -849,6 +851,8 @@
         <button class="lang-btn active" id="btn-pl" onclick="setLang('pl')">PL</button>
         <span class="lang-sep">/</span>
         <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+        <span class="lang-sep">/</span>
+        <button class="lang-btn" id="btn-sv" onclick="setLang('sv')">SV</button>
       </div>
       <a href="#products" class="nav-cta" data-i18n="nav.shop">Sklep</a>
       <button class="nav-hamburger" id="hamburger" onclick="toggleMobileMenu()" aria-label="Menu">
@@ -1256,6 +1260,79 @@
         'footer.col3.l4':      'Terms',
         'footer.col3.l5':      'Privacy Policy',
         'footer.copy':         '© 2026 Bobogna Edu Art. All rights reserved.',
+      },
+      sv: {
+        'nav.collection':      'Kollektion',
+        'nav.story':           'Historia',
+        'nav.inspirations':    'Inspiration',
+        'nav.contact':         'Kontakt',
+        'nav.shop':            'Butik',
+
+        'hero.eyebrow':        'Kreativa Fodral · Kollektion 2025',
+        'hero.headline':       'Konst<br><em>du bär med dig</em><br>varje dag',
+        'hero.sub':            'Handsydda fodral för konsttillbehör, inspirerade av världsmåleriets mästerverk. För dig som bär kreativiteten nära hjärtat.',
+        'hero.cta':            'Utforska kollektionen',
+        'hero.secondary':      'Vår historia <span>→</span>',
+        'hero.scroll':         'Scrolla ner',
+
+        'products.label':      '001 / Kollektion',
+        'products.title':      'Våra<br><em>konstfodral</em>',
+        'products.viewAll':    'Se alla <span>→</span>',
+        'products.p1.name':    'Stjärnklar natt',
+        'products.p1.sub':     'Van Gogh · Roll-up · 36 fickor',
+        'products.p2.name':    'Den stora vågen',
+        'products.p2.sub':     'Hokusai · Roll-up',
+        'products.p3.name':    'Linnefodral',
+        'products.p3.sub':     'Naturligt linne · 36 fickor',
+
+        'email.label':         'Väntelista',
+        'email.title':         'Ditt ritual<br><em>väntar på dig</em>',
+        'email.sub':           'Anmäl dig och var först att höra om nya kollektioner, limiterade upplagor och Bobogna-workshops.',
+        'email.gift':          '🎁 &nbsp; Gratis: Bobogna-protokollet — din första 20-minuterssession',
+        'email.placeholder':   'Din e-postadress',
+        'email.cta':           'Anmäl dig',
+        'email.success':       'Tack! Bobogna-protokollet skickas till din inkorg snart ✦',
+        'email.privacy':       'Ingen spam. Avsluta prenumerationen när som helst.',
+
+        'story.artwork.name':   'Flicka med pärlörhänge',
+        'story.artwork.sub':    'Vermeer · Bobogna Målarbok',
+        'story.label':         '002 / Historia',
+        'story.title':         'Konst<br><em>inom räckhåll</em>',
+        'story.text1':         'Bobogna föds ur en kärlek till konst och vardaglig kreativitet. Våra fodral är mer än en organizer — de är ett bärbart atelier du tar med dig till caféet, parken, på varje resa.',
+        'story.text2':         'Varje fodral är handsytt av premiummaterial tryckt med måleriets mästerverk: Hokusai, Van Gogh, Vermeer. För att skönhet ska användas, inte gömmas.',
+        'story.cta':           'Utforska varumärket',
+
+        'lifestyle.label':     '003 / Inspiration',
+        'lifestyle.title':     'Buret av<br><em>konstnärer</em>',
+        'lifestyle.desc':      'Från stortorget i Kraków till kullerstenarna i Paris — Bobogna reser med dig.',
+        'lifestyle.cap1':      'Kraków, Polen',
+        'lifestyle.cap3':      'På caféet',
+
+        'quote.text':          '"Kreativiteten känner varken plats eller tid.<br>Bara verktygen måste vara konsten värdiga."',
+
+        'cta.label':           '004 / Butik',
+        'cta.title':           'Hitta ditt<br><em>konstfodral</em>',
+        'cta.shop':            'Webbshop',
+        'cta.shop2':           'TwojePióro.pl',
+
+        'footer.tagline':      'Kreativa fodral med själ.<br>Kraków, Polen.',
+        'footer.col1.title':   'Kollektion',
+        'footer.col1.l1':      'Roll-up fodral',
+        'footer.col1.l2':      'Målarböcker',
+        'footer.col1.l3':      'Set',
+        'footer.col1.l4':      'Nyheter',
+        'footer.col2.title':   'Varumärke',
+        'footer.col2.l1':      'Om oss',
+        'footer.col2.l2':      'Historia',
+        'footer.col2.l3':      'Blogg',
+        'footer.col2.l4':      'Kontakt',
+        'footer.col3.title':   'Hjälp',
+        'footer.col3.l1':      'Frakt',
+        'footer.col3.l2':      'Returer',
+        'footer.col3.l3':      'FAQ',
+        'footer.col3.l4':      'Villkor',
+        'footer.col3.l5':      'Integritetspolicy',
+        'footer.copy':         '© 2026 Bobogna Edu Art. Alla rättigheter förbehållna.',
       }
     };
 
@@ -1279,13 +1356,16 @@
       });
 
       const ispl = lang === 'pl';
+      const issv = lang === 'sv';
       document.getElementById('btn-pl').classList.toggle('active', ispl);
-      document.getElementById('btn-en').classList.toggle('active', !ispl);
+      document.getElementById('btn-en').classList.toggle('active', !ispl && !issv);
+      document.getElementById('btn-sv').classList.toggle('active', issv);
       document.getElementById('btn-pl-mob').classList.toggle('active', ispl);
-      document.getElementById('btn-en-mob').classList.toggle('active', !ispl);
-      document.getElementById('terms-link').href = ispl ? '/regulamin.html' : '/terms.html';
-      document.getElementById('privacy-link').href = ispl ? '/polityka-prywatnosci.html' : '/privacy-policy.html';
-      document.getElementById('returns-link').href = ispl ? '/zwroty.html' : '/returns.html';
+      document.getElementById('btn-en-mob').classList.toggle('active', !ispl && !issv);
+      document.getElementById('btn-sv-mob').classList.toggle('active', issv);
+      document.getElementById('terms-link').href = ispl ? '/regulamin.html' : issv ? '/villkor.html' : '/terms.html';
+      document.getElementById('privacy-link').href = ispl ? '/polityka-prywatnosci.html' : issv ? '/integritetspolicy.html' : '/privacy-policy.html';
+      document.getElementById('returns-link').href = ispl ? '/zwroty.html' : issv ? '/returer.html' : '/returns.html';
     }
 
     function setLang(lang) {
@@ -1300,11 +1380,12 @@
       try {
         const res = await fetch('https://api.country.is/', { cache: 'force-cache' });
         const data = await res.json();
-        applyLang(data.country === 'PL' ? 'pl' : 'en');
+        const c = data.country;
+        applyLang(c === 'PL' ? 'pl' : c === 'SE' ? 'sv' : 'en');
         return;
       } catch (_) {}
       const bl = navigator.language || navigator.languages?.[0] || '';
-      applyLang(bl.startsWith('pl') ? 'pl' : 'en');
+      applyLang(bl.startsWith('pl') ? 'pl' : bl.startsWith('sv') ? 'sv' : 'en');
     })();
 
     // ─── MOBILE MENU ─────────────────────────────────────────────────
