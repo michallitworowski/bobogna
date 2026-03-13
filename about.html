@@ -223,19 +223,31 @@
       font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
       color: rgba(245,240,232,0.3);
     }
-    .video-caption {
-      position: relative; z-index: 2;
-      text-align: center;
+    /* ─── VIDEO CLOUDINARY ─── */
+    .craft-section {
+      background: #0d1520;
+      padding: 80px;
     }
-    .video-caption-label {
+    .craft-label {
       font-size: 9px; letter-spacing: 0.36em; text-transform: uppercase;
-      color: rgba(245,240,232,0.5); margin-bottom: 16px;
+      color: var(--gold); margin-bottom: 24px; text-align: center;
     }
-    .video-caption-text {
+    .craft-tagline {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.6rem, 2.5vw, 2.4rem);
+      font-size: clamp(1.4rem, 2vw, 2rem);
       font-style: italic; font-weight: 300;
-      color: var(--cream); line-height: 1.2;
+      color: rgba(245,240,232,0.6); line-height: 1.3;
+      text-align: center; margin-bottom: 40px;
+    }
+    .craft-video-wrap {
+      max-width: 960px; margin: 0 auto;
+      border-radius: 4px; overflow: hidden;
+      box-shadow: 0 40px 80px rgba(0,0,0,0.6);
+    }
+    .craft-video-wrap iframe {
+      display: block; width: 100%;
+      height: auto; aspect-ratio: 640/360;
+      border: none;
     }
 
     /* ─── PROCESS ─── */
@@ -450,6 +462,19 @@
       Beauty should be <em>used</em>, not kept hidden.
     </p>
     <p class="quote-attr fade-up d1">Agnieszka Litworowska · Bobogna Edu Art</p>
+  </section>
+
+  <!-- VIDEO -->
+  <section class="craft-section">
+    <div class="craft-label">Craft</div>
+    <p class="craft-tagline">Every case stitched by hand, one by one.</p>
+    <div class="craft-video-wrap fade-up">
+      <iframe
+        src="https://player.cloudinary.com/embed/?cloud_name=ddagxqgwb&public_id=process_ngodhp"
+        allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
   </section>
 
   <!-- PROCESS -->
