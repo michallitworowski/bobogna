@@ -476,14 +476,13 @@
     }
     .lifestyle-grid {
       display: grid;
-      grid-template-columns: 1.3fr 1fr 1fr;
-      grid-template-rows: 340px 340px;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 480px;
       gap: 14px;
     }
     .lcard {
       position: relative; overflow: hidden;
     }
-    .lcard:first-child { grid-row: span 2; }
     .lcard img {
       width: 100%; height: 100%;
       object-fit: cover; object-position: center top;
@@ -688,9 +687,8 @@
       .lifestyle-desc { text-align: left; max-width: 100%; }
       .lifestyle-grid {
         grid-template-columns: 1fr;
-        grid-template-rows: 300px 240px 240px;
+        grid-template-rows: 300px 300px 300px;
       }
-      .lcard:first-child { grid-row: span 1; }
 
       .quote-section { padding: 80px 32px; }
 
